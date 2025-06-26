@@ -8,11 +8,13 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import BackgroundDoodles from "./components/BackgroundDoodles";
 
 const App = () => {
   return (
     <div className="font-mono bg-white dark:bg-zinc-900 text-black dark:text-white">
       <Router>
+        <BackgroundDoodles />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -22,8 +22,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="border-b-4 border-black dark:border-white shadow-md sticky top-0 bg-white dark:bg-zinc-900 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center uppercase font-bold tracking-widest">
+    <nav className="shadow-md sticky top-0 bg-white dark:bg-zinc-900 z-50">
+      <div className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center uppercase font-bold tracking-widest">
         <Link
           to="/"
           className="text-2xl hover:text-blue-600 dark:hover:text-blue-400"
