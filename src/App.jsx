@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Experience from "./pages/Experience";
+import TechStack from "./pages/TechStack";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/techstack" element={<TechStack />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
