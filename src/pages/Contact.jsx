@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import SocialLinks from "../components/SocialLinks";
 import { db } from "../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -25,15 +26,31 @@ const Contact = () => {
     }));
   };
 
+  const validateForm = () => {
+    const { name, email, message, watchesAnime } = formData;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name.trim() || !email.trim() || !message.trim() || !watchesAnime) {
+      toast.error("Please fill out all fields!");
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address!");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     try {
       await addDoc(collection(db, "messages"), {
         ...formData,
         createdAt: Timestamp.now(),
       });
-      alert("Message sent successfully!");
-      // Optional: Reset form
+      toast.success("Message sent successfully!");
+
       setFormData({
         name: "",
         email: "",
@@ -41,6 +58,7 @@ const Contact = () => {
         watchesAnime: "",
       });
     } catch (error) {
+      toast.error("Failed to send message!");
       console.error("Error sending message: ", error);
     }
   };
@@ -55,7 +73,7 @@ const Contact = () => {
         variants={sectionVariants}
         viewport={{ once: true }}
       >
-        {/* Page Heading */}
+        {/* Heading */}
         <h1 className="relative font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight font-mono mb-16 text-center text-zinc-900 dark:text-white">
           <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
             Contact Me
@@ -67,26 +85,24 @@ const Contact = () => {
           <div>
             <label className="block mb-2 font-medium text-lg">Name</label>
             <input
-              type="text"
               name="name"
+              type="text"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-400"
+              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
               placeholder="Your Name"
-              required
             />
           </div>
 
           <div>
             <label className="block mb-2 font-medium text-lg">Email</label>
             <input
-              type="email"
               name="email"
+              type="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-400"
+              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
               placeholder="you@example.com"
-              required
             />
           </div>
 
@@ -96,10 +112,9 @@ const Contact = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 text-black dark:text-white border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-400"
+              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
               rows="5"
               placeholder="What's on your mind?"
-              required
             ></textarea>
           </div>
 
