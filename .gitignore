@@ -25,3 +25,6 @@ dist-ssr
 
 # Output css file
 src/output.css
+
+# Enviroment Variables
+.env

@@ -21,7 +21,7 @@ const Home = () => {
           </p>
           <div className="mt-6">
             <a
-              href="/#projects"
+              href="/projects"
               className="inline-block border-2 border-black dark:border-white px-6 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200"
             >
               🔥 Enter My World
