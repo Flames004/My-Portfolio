@@ -10,9 +10,6 @@ import {
 const SocialLinks = () => {
   return (
     <div className="mt-12 text-center space-y-4">
-      <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium">
-        Or connect with me here:
-      </p>
       <div className="flex justify-center gap-6 text-3xl">
         <a
           href="https://github.com/Flames004"
