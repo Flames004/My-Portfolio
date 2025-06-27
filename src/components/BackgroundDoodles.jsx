@@ -13,9 +13,9 @@ const doodlesByRoute = {
     { id: "c3", bottom: "3%", right: "7%", size: "w-40 h-40" },
   ],
   "/projects": [
-    { id: "c1", top: "8%", left: "20%", size: "w-14 h-14" },
-    { id: "c2", bottom: "10%", right: "10%", size: "w-20 h-20" },
-    { id: "c3", top: "20%", right: "5%", size: "w-16 h-16" },
+    { id: "c1", top: "8%", left: "20%", size: "w-36 h-36" },
+    { id: "c2", bottom: "10%", left: "5%", size: "w-20 h-20" },
+    { id: "c3", top: "40%", right: "3%", size: "w-18 h-18" },
   ],
   "/techstack": [
     { id: "c1", top: "15%", left: "10%", size: "w-16 h-16" },
@@ -40,7 +40,7 @@ const BackgroundDoodles = ({ route }) => {
           layoutId={item.id}
           src="/assets/doodles/cloud.png"
           alt=""
-          className={`absolute opacity-20 animate-float filter ${item.size}`}
+          className={`absolute opacity-20 pointer-events-none select-none transition-opacity duration-1000 animate-float filter ${item.size}`}
           style={{
             top: item.top,
             left: item.left,
