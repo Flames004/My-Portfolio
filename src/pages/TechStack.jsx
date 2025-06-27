@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const tech = {
   Languages: [
@@ -99,9 +100,17 @@ const TechStack = () => {
   return (
     <section className="min-h-screen px-6 md:px-16 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold border-b-4 border-red-500 inline-block mb-12">
-          Tech Arsenal
-        </h2>
+        <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="relative font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight font-mono mb-12 text-zinc-900 dark:text-white text-left"
+          >
+            <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
+              Tech Arsenal
+            </span>
+          </motion.h1>
 
         {Object.entries(tech).map(([category, items]) => (
           <div key={category} className="mb-10">

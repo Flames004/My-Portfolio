@@ -9,7 +9,7 @@ const doodlesByRoute = {
   ],
   "/about": [
     { id: "c1", top: "5%", right: "10%", size: "w-22 h-22" },
-    { id: "c2", top: "35%", left: "5%", size: "w-36 h-36" },
+    { id: "c2", top: "45%", left: "5%", size: "w-36 h-36" },
     { id: "c3", bottom: "3%", right: "7%", size: "w-40 h-40" },
   ],
   "/projects": [
