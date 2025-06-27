@@ -11,6 +11,8 @@ const sectionVariants = {
 };
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,13 +46,14 @@ const Contact = () => {
     e.preventDefault();
     if (!validateForm()) return;
 
+    setIsSubmitting(true);
+
     try {
       await addDoc(collection(db, "messages"), {
         ...formData,
         createdAt: Timestamp.now(),
       });
       toast.success("Message sent successfully!");
-
       setFormData({
         name: "",
         email: "",
@@ -60,6 +63,8 @@ const Contact = () => {
     } catch (error) {
       toast.error("Failed to send message!");
       console.error("Error sending message: ", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -151,9 +156,16 @@ const Contact = () => {
           <div className="pt-6 text-center">
             <button
               type="submit"
-              className="px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300"
+              disabled={isSubmitting}
+              className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 ${
+                isSubmitting ? "opacity-60 cursor-not-allowed" : "hover:bg-red-600"
+              }`}
             >
-              Send ➤
+              {isSubmitting ? (
+                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              ) : (
+                "Send ➤"
+              )}
             </button>
           </div>
         </form>

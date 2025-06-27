@@ -23,9 +23,9 @@ const doodlesByRoute = {
     { id: "c3", top: "10%", right: "30%", size: "w-24 h-24" },
   ],
   "/contact": [
-    { id: "c1", top: "15%", right: "20%", size: "w-16 h-16" },
-    { id: "c2", bottom: "12%", right: "15%", size: "w-20 h-20" },
-    { id: "c3", top: "40%", left: "5%", size: "w-12 h-12" },
+    { id: "c1", top: "15%", right: "20%", size: "w-22 h-22" },
+    { id: "c2", bottom: "12%", right: "10%", size: "w-20 h-20" },
+    { id: "c3", top: "40%", left: "5%", size: "w-44 h-44" },
   ],
 };
 
