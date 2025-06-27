@@ -40,13 +40,12 @@ const BackgroundDoodles = ({ route }) => {
           layoutId={item.id}
           src="/assets/doodles/cloud.png"
           alt=""
-          className={`absolute opacity-20 pointer-events-none select-none transition-opacity duration-1000 animate-float filter ${item.size}`}
+          className={`absolute opacity-30 pointer-events-none select-none transition-opacity duration-1000 animate-float dark:invert dark:brightness-200 ${item.size}`}
           style={{
             top: item.top,
             left: item.left,
             right: item.right,
             bottom: item.bottom,
-            filter: "invert(1) brightness(2)",
           }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         />

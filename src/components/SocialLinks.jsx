@@ -15,7 +15,7 @@ const SocialLinks = () => {
           href="https://github.com/Flames004"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-black transition duration-300"
+          className="dark:hover:text-black transition duration-300 hover:text-gray-600"
         >
           <FaGithub />
         </a>

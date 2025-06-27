@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 
@@ -7,9 +7,31 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Detect system theme and persist user's choice
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setIsDark(false);
+    }
+  }, []);
+
   const toggleTheme = () => {
     const root = document.documentElement;
-    root.classList.toggle("dark");
+    if (isDark) {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
     setIsDark(!isDark);
   };
 
@@ -22,7 +44,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="shadow-md sticky top-0 bg-white dark:bg-zinc-900 z-50">
+    <nav className="shadow-md dark:shadow-neutral-700 dark:shadow-md sticky top-0 bg-white dark:bg-zinc-900 z-50">
       <div className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center uppercase font-bold tracking-widest">
         <Link
           to="/"
@@ -51,9 +73,8 @@ const Navbar = () => {
 
         {/* Right Controls */}
         <div className="flex items-center space-x-4">
-          {/* Resume Button */}
           <a
-            href="/resume.pdf" // Place your resume in /public folder as 'resume.pdf'
+            href="/resume.pdf"
             download
             className="hidden md:block border-2 border-black dark:border-white px-3 py-1 rounded shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 text-sm"
           >
@@ -61,11 +82,17 @@ const Navbar = () => {
           </a>
 
           {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="text-xl">
+          <button
+            onClick={toggleTheme}
+            className={`text-2xl transition-transform duration-400 hover:rotate-12 cursor-pointer ml-5 ${
+              isDark ? "text-yellow-400" : "text-gray-800"
+            }`}
+            title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          >
             {isDark ? <FaSun /> : <FaMoon />}
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Toggle */}
           <button
             className="md:hidden text-xl"
             onClick={() => setIsOpen(!isOpen)}
@@ -91,8 +118,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          {/* Mobile Resume Button */}
-          <div className="text-center">
+          <div className="text-center mt-4">
             <a
               href="/resume.pdf"
               download

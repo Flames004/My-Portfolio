@@ -122,7 +122,7 @@ const TechStack = () => {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex flex-col items-center justify-center bg-zinc-100 dark:bg-zinc-800 px-6 py-4 rounded-md shadow hover:scale-105 transition-transform duration-200 w-36 h-24 cursor-pointer"
+                  className="group flex flex-col items-center justify-center bg-neutral-100 dark:bg-zinc-800 px-6 py-4 rounded-md shadow-md hover:scale-105 transition-transform duration-200 w-36 h-24 cursor-pointer"
                 >
                   <img
                     src={item.icon}

@@ -190,7 +190,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           {/* How I Stay Inspired */}
-          <div className="relative mb-12 rounded-2xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md p-8 shadow-lg shadow-zinc-300/30 dark:shadow-black/50 transition-all duration-300">
+          <div className="relative mb-12 rounded-2xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md p-8 shadow-lg shadow-zinc-500/30 dark:shadow-black/50 transition-all duration-300">
             <h3 className="text-3xl font-bold mb-4 text-zinc-800 dark:text-white">
               How I Stay Inspired
             </h3>
@@ -205,7 +205,7 @@ const About = () => {
           </div>
 
           {/* Beyond the Screen */}
-          <div className="relative rounded-2xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md p-8 shadow-lg shadow-zinc-300/30 dark:shadow-black/50 transition-all duration-300">
+          <div className="relative rounded-2xl bg-white/70 dark:bg-zinc-800/70 backdrop-blur-md p-8 shadow-lg shadow-zinc-500/30 dark:shadow-black/50 transition-all duration-300">
             <h3 className="text-3xl font-bold mb-4 text-zinc-800 dark:text-white">
               Beyond the Screen
             </h3>
