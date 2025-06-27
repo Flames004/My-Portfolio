@@ -86,7 +86,7 @@ const Contact = () => {
         </h1>
 
         {/* Form */}
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit} netlify>
           <div>
             <label className="block mb-2 font-medium text-lg">Name</label>
             <input
