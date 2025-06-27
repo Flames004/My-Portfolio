@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const doodlesByRoute = {
   "/": [
     { id: "c1", top: "10%", left: "8%", size: "w-20 h-20" },
-    { id: "c2", bottom: "15%", left: "30%", size: "w-36 h-36" },
+    { id: "c2", bottom: "9%", left: "30%", size: "w-36 h-36" },
     { id: "c3", top: "30%", right: "10%", size: "w-44 h-44" },
   ],
   "/about": [

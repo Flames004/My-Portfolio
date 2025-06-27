@@ -44,7 +44,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="shadow-md dark:shadow-neutral-700 dark:shadow-md sticky top-0 bg-white dark:bg-zinc-900 z-50">
+    <nav className="shadow-md dark:shadow-neutral-700 dark:shadow-md fixed top-0 left-0 w-full bg-white dark:bg-zinc-900 z-50">
       <div className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center uppercase font-bold tracking-widest">
         <Link
           to="/"

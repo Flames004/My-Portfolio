@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-16 bg-white dark:bg-zinc-900">
+    <section className="min-h-screen pt-28 flex flex-col md:flex-row items-center justify-center px-6 md:px-16 bg-white dark:bg-zinc-900">
       {/* Text Comic Panel */}
       <div className="w-full md:w-1/2 p-6 border-4 border-black dark:border-white shadow-xl bg-white dark:bg-zinc-800 text-center md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold leading-snug">
