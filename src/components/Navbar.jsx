@@ -84,7 +84,7 @@ const Navbar = () => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className={`text-2xl transition-transform duration-400 hover:rotate-12 cursor-pointer ml-5 ${
+            className={`text-2xl transition-transform duration-400 hover:-rotate-45 cursor-pointer ml-5 ${
               isDark ? "text-yellow-400" : "text-gray-800"
             }`}
             title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
