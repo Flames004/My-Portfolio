@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
 import { AnimatePresence, motion } from "framer-motion";
+import ScrollToTop from "./components/ScrollToTop";
 
 const PageWrapper = ({ children }) => {
   return (
@@ -79,6 +80,7 @@ const AppContent = () => {
           />
         </Routes>
       </AnimatePresence>
+      <ScrollToTop />
     </div>
   );
 };

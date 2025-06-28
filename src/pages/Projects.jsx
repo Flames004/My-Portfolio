@@ -32,9 +32,9 @@ const mainProjects = [
 
 const moreProjects = [
   "Score Board",
-  "Movies Search App",
+  "Movie Pedia",
   "To Do List App",
-  "Snake Game",
+  "Password Generator",
 ];
 
 const Projects = () => {
