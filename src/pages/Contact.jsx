@@ -158,7 +158,9 @@ const Contact = () => {
               type="submit"
               disabled={isSubmitting}
               className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 ${
-                isSubmitting ? "opacity-60 cursor-not-allowed" : "hover:bg-red-600"
+                isSubmitting
+                  ? "opacity-60 cursor-not-allowed"
+                  : "hover:bg-red-600"
               }`}
             >
               {isSubmitting ? (
