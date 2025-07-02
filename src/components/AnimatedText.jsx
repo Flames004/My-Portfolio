@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const translations = [
   { text: "Deepak", lang: "English" },
   { text: "दीपक", lang: "Hindi" },
-  { text: "দীপক", lang: "Assamese" },
   { text: "দীপক", lang: "Bengali" },
   { text: "દીપક", lang: "Gujarati" },
   { text: "ದೀಪಕ್", lang: "Kannada" },
