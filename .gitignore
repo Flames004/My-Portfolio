@@ -28,3 +28,5 @@ src/output.css
 
 # Enviroment Variables
 .env
+
+to_do_tasks.txt
