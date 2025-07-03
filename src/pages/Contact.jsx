@@ -68,7 +68,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
+    <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-transparent text-black dark:text-white">
       <motion.div
         className="max-w-3xl mx-auto"
         initial="hidden"

@@ -32,7 +32,7 @@ const ScrollToTop = () => {
         bg-red-500 text-white hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-500
         sm:p-2 sm:bottom-4 sm:right-4`}
       >
-        <FaArrowUp className="text-lg sm:text-base" />
+        <FaArrowUp className="md:text-2xl sm:text-base" />
       </button>
     </div>
   );

@@ -67,7 +67,7 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="min-h-screen pt-28 px-4 sm:px-6 md:px-12 lg:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
+    <section className="min-h-screen pt-28 px-4 sm:px-6 md:px-12 lg:px-20 py-20 bg-transparent text-black dark:text-white">
       <motion.div
         className="max-w-6xl mx-auto"
         initial="hidden"

@@ -149,7 +149,7 @@ const tech = {
 
 const TechStack = () => {
   return (
-    <section className="min-h-screen pt-28 px-6 md:px-16 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
+    <section className="min-h-screen pt-28 px-6 md:px-16 py-20 bg-transparent text-black dark:text-white">
       <div className="max-w-5xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

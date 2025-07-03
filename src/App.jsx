@@ -1,5 +1,3 @@
-// Manga/Comic Panel Inspired Portfolio - App.jsx
-
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -33,10 +31,12 @@ const PageWrapper = ({ children }) => {
 const AppContent = () => {
   const location = useLocation();
   return (
-    <div className="font-mono bg-white dark:bg-zinc-900 text-black dark:text-white relative overflow-hidden">
+    <div className="font-mono bg-white dark:bg-zinc-900 text-black dark:text-white relative overflow-hidden z-0">
       <BackgroundDoodles route={location.pathname} />
+
       <Navbar />
-      <AnimatePresence mode="wait">
+
+      <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"
@@ -80,6 +80,7 @@ const AppContent = () => {
           />
         </Routes>
       </AnimatePresence>
+
       <ScrollToTop />
     </div>
   );

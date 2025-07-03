@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section className="min-h-screen pt-28 px-4 md:px-10 pb-16 bg-white dark:bg-zinc-900 flex items-center justify-center">
+    <section className="min-h-screen pt-28 px-4 md:px-10 pb-16 bg-transparent flex items-center justify-center">
       <div className="max-w-6xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         {/* Left - Text Panel */}
         <div className="w-full md:w-2/3 bg-gradient-to-br from-white via-zinc-100 to-white dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 border-4 border-black dark:border-white rounded-xl shadow-xl p-8 sm:p-10 text-center md:text-left">
