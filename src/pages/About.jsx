@@ -245,8 +245,8 @@ const About = () => {
           viewport={{ once: true }}
         >
           <p className="text-2xl md:text-3xl font-semibold italic text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto">
-            “ Power isn’t determined by your size, but the size of your heart
-            and dreams. ”
+            “Power isn’t determined by your size, but the size of your heart
+            and dreams.”
           </p>
           <p className="mt-2 text-lg text-zinc-500 dark:text-zinc-500">
             — Monkey D. Luffy

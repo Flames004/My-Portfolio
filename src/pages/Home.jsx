@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedText from "../components/AnimatedText";
 
 const Home = () => {
   return (
@@ -7,7 +8,9 @@ const Home = () => {
         {/* Left - Text Panel */}
         <div className="w-full md:w-2/3 bg-gradient-to-br from-white via-zinc-100 to-white dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 border-4 border-black dark:border-white rounded-xl shadow-xl p-8 sm:p-10 text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-snug text-zinc-900 dark:text-white">
-            I'm <span>Deepak Shukla</span>,<br />
+            <div className="flex items-center">
+              I'm <AnimatedText />
+            </div>
             but you can call me{" "}
             <span className="text-red-600 dark:text-red-400">Flames.</span>
           </h1>

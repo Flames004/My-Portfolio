@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const translations = [
-  { text: "DEEPAK", lang: "English" },
-  { text: "दीपक", lang: "Hindi" },
-  { text: "দীপক", lang: "Bengali" },
-  { text: "દીપક", lang: "Gujarati" },
-  { text: "ದೀಪಕ್", lang: "Kannada" },
-  { text: "ദീപക്", lang: "Malayalam" },
-  { text: "ଦୀପକ", lang: "Oriya" },
-  { text: "ਦੀਪਕ", lang: "Punjabi" },
-  { text: "தீபக்", lang: "Tamil" },
-  { text: "దీపక్", lang: "Telugu" },
-  { text: "دیپک", lang: "Urdu" },
-  { text: "ディーパク", lang: "Japanese" },
+  { text: "Deepak Shukla", lang: "English" },
+  { text: "दीपक शुक्ला", lang: "Hindi" },
+  { text: "দীপক শুক্লা", lang: "Bengali" },
+  { text: "દીપક શુક્લા", lang: "Gujarati" },
+  { text: "ದೀಪಕ್ ಶುಕ್ಲಾ", lang: "Kannada" },
+  { text: "ദീപക് ശുക്ല", lang: "Malayalam" },
+  { text: "ଦୀପକ ଶୁକ୍ଲା", lang: "Oriya" },
+  { text: "ਦੀਪਕ ਸ਼ੁਕਲਾ", lang: "Punjabi" },
+  { text: "தீபக் சுக்லா", lang: "Tamil" },
+  { text: "దీపక్ శుక్లా", lang: "Telugu" },
+  { text: "دیپک شکلا", lang: "Urdu" },
 ];
 
 const AnimatedText = () => {
@@ -30,7 +29,7 @@ const AnimatedText = () => {
     <div
       title={translations[index].lang}
       aria-label={translations[index].lang}
-      className="relative w-[120px] sm:w-[140px] md:w-[160px] h-[36px] flex items-center justify-center"
+      className="h-[44px] sm:h-[52px] w-64 flex items-center justify-start ml-7"
     >
       <AnimatePresence mode="wait">
         <motion.span
@@ -39,13 +38,14 @@ const AnimatedText = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.4 }}
-          className={`absolute font-bold text-center hover:text-red-500 dark:hover:text-red-400 ${
-            translations[index].lang === "English"
-              ? "text-3xl sm:text-4xl"
-              : "text-xl sm:text-2xl"
-          }`}
+          className={`absolute font-bold text-left sm:text-center hover:text-red-500 dark:hover:text-red-400
+        ${
+          translations[index].lang === "English"
+            ? "text-4xl sm:text-5xl"
+            : "text-2xl sm:text-3xl"
+        }`}
         >
-          {translations[index].text}
+          {translations[index].text + ","}
         </motion.span>
       </AnimatePresence>
     </div>
