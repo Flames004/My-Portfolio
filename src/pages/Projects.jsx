@@ -67,7 +67,7 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="min-h-screen pt-28 px-6 md:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
+    <section className="min-h-screen pt-28 px-4 sm:px-6 md:px-12 lg:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
       <motion.div
         className="max-w-6xl mx-auto"
         initial="hidden"
@@ -76,14 +76,12 @@ const Projects = () => {
         variants={sectionVariants}
         viewport={{ once: true }}
       >
-        {/* Main Heading */}
-        <h1 className="relative font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight font-mono mb-20 text-center text-zinc-900 dark:text-white">
+        <h1 className="relative font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight font-mono mb-20 text-center text-zinc-900 dark:text-white">
           <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
             Projects
           </span>
         </h1>
 
-        {/* Main Projects */}
         <div className="space-y-16">
           {mainProjects.map((project, index) => (
             <motion.div
@@ -97,23 +95,23 @@ const Projects = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="relative overflow-hidden rounded-lg shadow-lg md:w-1/2 hover:scale-105 transition-transform duration-300">
+              <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-auto object-cover border-zinc-300 dark:border-zinc-700 transition-transform duration-500"
+                  className="w-full h-auto object-cover border border-zinc-300 dark:border-zinc-700 rounded-md"
                 />
               </div>
-              <div className="md:w-1/2">
-                <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-                <p className="text-lg text-zinc-700 dark:text-zinc-300 mb-4">
+              <div className="w-full md:w-1/2">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">{project.title}</h2>
+                <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 mb-4">
                   {project.description}
                 </p>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 mt-2 text-md font-semibold border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out active:scale-95"
+                  className="inline-block px-6 py-2 mt-2 text-sm sm:text-md font-semibold border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out active:scale-95"
                 >
                   View Project
                 </a>
@@ -122,22 +120,20 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Show More Button */}
         <div className="text-center mt-20">
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowMore(!showMore)}
-            className="px-6 py-2 text-md font-medium border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300"
+            className="px-6 py-2 text-sm sm:text-md font-medium border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300"
           >
             {showMore ? "Show Less" : "Show More"}
           </motion.button>
         </div>
 
-        {/* More Projects Grid */}
         <AnimatePresence>
           {showMore && (
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -157,7 +153,7 @@ const Projects = () => {
                   variants={fadeIn}
                   className="bg-zinc-100 dark:bg-zinc-800 p-6 rounded-lg shadow-lg flex flex-col justify-between hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  <h4 className="text-lg font-bold text-zinc-800 dark:text-white mb-2">
+                  <h4 className="text-md sm:text-lg font-bold text-zinc-800 dark:text-white mb-2">
                     {project.title}
                   </h4>
                   <p className="text-sm text-zinc-600 dark:text-zinc-300 mb-4">
