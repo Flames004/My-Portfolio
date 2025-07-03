@@ -9,8 +9,8 @@ import {
 
 const SocialLinks = () => {
   return (
-    <div className="mt-12 text-center space-y-4">
-      <div className="flex justify-center gap-6 text-3xl">
+    <div className="mt-12 text-center">
+      <div className="flex justify-center flex-wrap gap-4 sm:gap-6 text-2xl sm:text-3xl">
         <a
           href="https://github.com/Flames004"
           target="_blank"
