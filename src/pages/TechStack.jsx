@@ -26,17 +26,27 @@ const tech = {
     {
       name: "C++",
       icon: "https://cdn.simpleicons.org/cplusplus",
-      link: "https://isocpp.org/",
+      link: "https://en.cppreference.com/w/",
     },
     {
       name: "Java",
       icon: "https://api.iconify.design/logos:java.svg",
-      link: "https://dev.java/",
+      link: "https://www.java.com/",
+    },
+    {
+      name: "HTML",
+      icon: "https://cdn.simpleicons.org/html5",
+      link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      name: "CSS",
+      icon: "https://cdn.simpleicons.org/css",
+      link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
   ],
   "Frameworks & Libraries": [
     {
-      name: "React.js",
+      name: "React",
       icon: "https://cdn.simpleicons.org/react",
       link: "https://reactjs.org/",
     },
@@ -46,9 +56,14 @@ const tech = {
       link: "https://reactnative.dev/",
     },
     {
+      name: "Next.js",
+      icon: "https://cdn.simpleicons.org/nextdotjs",
+      link: "https://nextjs.org/",
+    },
+    {
       name: "Tailwind CSS",
       icon: "https://cdn.simpleicons.org/tailwindcss",
-      link: "https://tailwindcss.com/docs",
+      link: "https://tailwindcss.com/",
     },
     {
       name: "Bootstrap",
@@ -63,9 +78,9 @@ const tech = {
       link: "https://code.visualstudio.com/",
     },
     {
-      name: "GitHub",
-      icon: "https://cdn.simpleicons.org/github",
-      link: "https://github.com/",
+      name: "Git",
+      icon: "https://cdn.simpleicons.org/git",
+      link: "https://git-scm.com/",
     },
     {
       name: "Figma",
@@ -96,6 +111,38 @@ const tech = {
       name: "Clerk",
       icon: "https://cdn.simpleicons.org/clerk",
       link: "https://clerk.dev/",
+    },
+  ],
+  "AI & Productivity Tools": [
+    {
+      name: "ChatGPT / OpenAI",
+      icon: "https://cdn.simpleicons.org/openai",
+      link: "https://openai.com/chatgpt",
+    },
+    {
+      name: "GitHub Copilot",
+      icon: "https://cdn.simpleicons.org/githubcopilot",
+      link: "https://github.com/features/copilot",
+    },
+    {
+      name: "Replit",
+      icon: "https://cdn.simpleicons.org/replit",
+      link: "https://replit.com/",
+    },
+    {
+      name: "Canva",
+      icon: "https://cdn.simpleicons.org/canva",
+      link: "https://www.canva.com/",
+    },
+    {
+      name: "Notion",
+      icon: "https://cdn.simpleicons.org/notion",
+      link: "https://www.notion.so/",
+    },
+    {
+      name: "Google Gemini",
+      icon: "https://cdn.simpleicons.org/googlegemini",
+      link: "https://deepmind.google/technologies/gemini/",
     },
   ],
 };
@@ -133,7 +180,7 @@ const TechStack = () => {
                     alt={item.name}
                     className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1"
                   />
-                  <span className="text-sm text-zinc-700 dark:text-zinc-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap overflow-hidden text-ellipsis text-center">
+                  <span className="text-sm sm:opacity-100 text-zinc-700 dark:text-zinc-300 mt-2 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap overflow-hidden text-ellipsis text-center">
                     {item.name}
                   </span>
                 </a>
