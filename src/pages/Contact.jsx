@@ -12,7 +12,6 @@ const sectionVariants = {
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -69,7 +68,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen pt-28 px-6 md:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
+    <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-white dark:bg-zinc-900 text-black dark:text-white">
       <motion.div
         className="max-w-3xl mx-auto"
         initial="hidden"
@@ -79,14 +78,14 @@ const Contact = () => {
         viewport={{ once: true }}
       >
         {/* Heading */}
-        <h1 className="relative font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight font-mono mb-16 text-center text-zinc-900 dark:text-white">
+        <h1 className="relative font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight font-mono mb-16 text-center text-zinc-900 dark:text-white">
           <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
             Contact Me
           </span>
         </h1>
 
         {/* Form */}
-        <form className="space-y-6" onSubmit={handleSubmit} netlify>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label className="block mb-2 font-medium text-lg">Name</label>
             <input
@@ -127,7 +126,7 @@ const Contact = () => {
             <label className="block mb-3 font-medium text-lg">
               Do you watch anime?
             </label>
-            <div className="flex gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
@@ -157,7 +156,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 ${
+              className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto ${
                 isSubmitting
                   ? "opacity-60 cursor-not-allowed"
                   : "hover:bg-red-600"
@@ -173,8 +172,8 @@ const Contact = () => {
         </form>
 
         {/* Social Links */}
-        <section className="mt-20">
-          <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium text-center -mb-5">
+        <section className="mt-20 text-center">
+          <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium mb-5">
             Or connect with me
           </p>
           <SocialLinks />
