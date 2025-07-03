@@ -10,7 +10,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       document.documentElement.classList.add("dark");
       setIsDark(true);
@@ -42,13 +44,17 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-zinc-900 shadow-md dark:shadow-neutral-700">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="hover:scale-105 transition-transform duration-300 w-[160px] sm:w-[180px] md:w-[200px]"
+          className="transition-transform duration-300 hover:rotate-180"
         >
-          <AnimatedText />
+          <img
+            src="./public/logo.png"
+            alt="Logo"
+            className="h-10 overflow-hidden scale-150"
+          />
         </Link>
 
         {/* Desktop Nav */}
