@@ -122,7 +122,7 @@ const Navbar = () => {
                   <Link
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`uppercase block py-1 px-2 text-base font-semibold transition duration-200 ${
+                    className={`uppercase block py-1 px-2 text-base font-bold transition duration-200 ${
                       isActive
                         ? "text-red-500 dark:text-red-400"
                         : "text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-400"
