@@ -4,11 +4,10 @@ import { FaArrowUp } from "react-icons/fa";
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Toggle visibility
+  // Show button on scroll
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) setIsVisible(true);
-      else setIsVisible(false);
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -16,22 +15,26 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    isVisible && (
+    <div>
       <button
         onClick={scrollToTop}
-        className="fixed cursor-pointer hover:scale-110 bottom-6 right-6 z-50 p-3 rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-all duration-300 dark:bg-red-400 dark:hover:bg-red-500"
         aria-label="Scroll to Top"
+        className={`fixed bottom-5 right-5 z-50 p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none
+        ${
+          isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-8 pointer-events-none"
+        }
+        bg-red-500 text-white hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-500
+        sm:p-2 sm:bottom-4 sm:right-4`}
       >
-        <FaArrowUp className="text-xl" />
+        <FaArrowUp className="text-lg sm:text-base" />
       </button>
-    )
+    </div>
   );
 };
 
