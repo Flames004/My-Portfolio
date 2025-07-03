@@ -8,13 +8,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Detect system theme and persist user's choice
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
       document.documentElement.classList.add("dark");
       setIsDark(true);
@@ -45,17 +41,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="shadow-md dark:shadow-neutral-700 fixed top-0 left-0 w-full bg-white dark:bg-zinc-900 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center uppercase font-bold tracking-widest">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-zinc-900 shadow-md dark:shadow-neutral-700">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
+        {/* Brand / Logo */}
         <Link
           to="/"
-          className="hover:scale-105 transition-transform duration-300"
+          className="hover:scale-105 transition-transform duration-300 w-[160px] sm:w-[180px] md:w-[200px]"
         >
           <AnimatedText />
         </Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-6">
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-7 text-sm lg:text-base">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -63,12 +60,11 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`relative group transition-all duration-300 ease-in-out px-1
-            ${
-              isActive
-                ? "text-red-500 dark:text-red-400"
-                : "text-zinc-800 dark:text-zinc-200"
-            }
-          `}
+                    ${
+                      isActive
+                        ? "text-red-500 dark:text-red-400"
+                        : "text-zinc-800 dark:text-zinc-200"
+                    }`}
                 >
                   <span className="relative z-10">{item.name}</span>
                   {!isActive && (
@@ -84,11 +80,12 @@ const Navbar = () => {
         </ul>
 
         {/* Right Controls */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mt-4 md:mt-0">
+          {/* Resume Button */}
           <a
             href="/resume.pdf"
             download
-            className="hidden md:block border-2 border-black dark:border-white px-3 py-1 rounded shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 text-sm"
+            className="hidden md:inline-block border-2 border-black dark:border-white px-3 py-1 rounded shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 text-xs lg:text-sm"
           >
             📜 Take My Resume, Senpai!
           </a>
@@ -96,7 +93,7 @@ const Navbar = () => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className={`text-2xl transition-transform duration-400 hover:-rotate-45 cursor-pointer ml-5 ${
+            className={`text-xl transition-transform duration-400 hover:-rotate-45 cursor-pointer ${
               isDark ? "text-yellow-400" : "text-gray-800"
             }`}
             title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
@@ -104,9 +101,9 @@ const Navbar = () => {
             {isDark ? <FaSun /> : <FaMoon />}
           </button>
 
-          {/* Mobile Toggle */}
+          {/* Hamburger */}
           <button
-            className="md:hidden text-xl"
+            className="md:hidden text-xl text-zinc-800 dark:text-zinc-200"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FaTimes /> : <FaBars />}
@@ -116,8 +113,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 py-2 border-t-2 border-black dark:border-white">
-          <ul className="flex flex-col space-y-2">
+        <div className="md:hidden px-6 py-4 border-t border-zinc-300 dark:border-zinc-700">
+          <ul className="flex flex-col space-y-3">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
@@ -141,7 +138,7 @@ const Navbar = () => {
             <a
               href="/resume.pdf"
               download
-              className="inline-block animate-bounce border-2 border-black dark:border-white px-4 py-2 rounded text-sm shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+              className="inline-block border-2 border-black dark:border-white px-4 py-2 rounded text-sm shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
             >
               📜 Take My Resume, Senpai!
             </a>
