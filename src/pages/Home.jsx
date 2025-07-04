@@ -1,5 +1,6 @@
 import React from "react";
 import AnimatedText from "../components/AnimatedText";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -23,12 +24,12 @@ const Home = () => {
           </p>
 
           <div className="mt-6">
-            <a
-              href="/projects"
-              className="inline-block border-2 border-black dark:border-white px-6 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 font-semibold"
+            <Link
+              to="/projects"
+              className="inline-block border-2 border-black dark:border-white px-6 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-transform duration-200 font-semibold"
             >
               🔥 Enter My World
-            </a>
+            </Link>
           </div>
         </div>
 
