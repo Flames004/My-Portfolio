@@ -35,10 +35,18 @@ const Home = () => {
 
         {/* Right - Avatar */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
+          {/* Large screen avatar (md and up) */}
           <img
             src="/avatar2.png"
             alt="avatar"
-            className="max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[450px] w-full h-auto transition-transform duration-300 hover:scale-105"
+            className="hidden md:block max-w-[400px] lg:max-w-[450px] w-full h-auto transition-transform duration-300 hover:scale-105"
+          />
+
+          {/* Small screen avatar (below md) */}
+          <img
+            src="/avatar3.png"
+            alt="mobile avatar"
+            className="block md:hidden max-w-[250px] sm:max-w-[260px] w-full h-auto transition-transform duration-300 hover:scale-105 rounded-full border-5 border-black dark:border-white p-1"
           />
         </div>
       </div>
