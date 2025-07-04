@@ -44,21 +44,21 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-zinc-900 shadow-md dark:shadow-neutral-700">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center flex-wrap">
+      <div className="max-w-7xl mx-auto flex items-center relative h-[72px]">
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="transition-transform duration-300 hover:rotate-180"
+          className="transition-transform duration-300 hover:rotate-y-180 absolute left-[8%]"
         >
           <img
-            src="./public/logo.png"
+            src="/logo.png"
             alt="Logo"
             className="h-10 overflow-hidden scale-150"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-7 text-sm lg:text-base">
+        <ul className="hidden md:flex text-sm lg:text-base mx-auto lg:flex space-x-6 uppercase font-semibold tracking-wider">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -86,7 +86,7 @@ const Navbar = () => {
         </ul>
 
         {/* Right Controls */}
-        <div className="flex items-center space-x-4 mt-4 md:mt-0">
+        <div className="flex items-center space-x-4 md:mt-0 absolute right-[5%] md:right-[1%]">
           {/* Resume Button */}
           <a
             href="/resume.pdf"
@@ -120,7 +120,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden px-6 py-4 border-t border-zinc-300 dark:border-zinc-700">
-          <ul className="flex flex-col space-y-3">
+          <ul className="flex flex-col space-y-3 text-center">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (

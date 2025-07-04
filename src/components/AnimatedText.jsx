@@ -29,7 +29,7 @@ const AnimatedText = () => {
     <div
       title={translations[index].lang}
       aria-label={translations[index].lang}
-      className="h-[44px] sm:h-[52px] w-64 flex items-center justify-start ml-7"
+      className="h-[44px] sm:h-[52px] w-64 flex items-center justify-start ml-5 md:ml-7"
     >
       <AnimatePresence mode="wait">
         <motion.span
@@ -38,11 +38,11 @@ const AnimatedText = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.4 }}
-          className={`absolute font-bold text-left sm:text-center hover:text-red-500 dark:hover:text-red-400
+          className={`absolute font-bold text-left hover:text-red-500 dark:hover:text-red-400
         ${
           translations[index].lang === "English"
-            ? "text-4xl sm:text-5xl"
-            : "text-2xl sm:text-3xl"
+            ? "text-3xl sm:text-5xl"
+            : "text-2xl sm:text-4xl"
         }`}
         >
           {translations[index].text + ","}
