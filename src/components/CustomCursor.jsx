@@ -37,8 +37,8 @@ const CustomCursor = () => {
   }, []);
 
   const cursorImage = isHovering
-    ? `/assets/cursor_2/katana-hand-${theme}.png`
-    : `/assets/cursor_2/katana-${theme}.png`;
+    ? `/assets/cursor/katana-hand-${theme}.png`
+    : `/assets/cursor/katana-${theme}.png`;
 
   return (
     <>

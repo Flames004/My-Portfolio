@@ -22,3 +22,24 @@ body {
     cursor: default;
 }
 }
+
+body,
+a,
+button,
+input,
+textarea,
+select,
+label {
+  cursor: none !important;
+}
+@media (any-pointer: coarse) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  label {
+    cursor: default !important;
+  }
+}
