@@ -14,6 +14,8 @@ import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
 import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
+import { isCurCursorSupported } from "./utils/isCursorSupported";
+import CustomCursor from "./components/CustomCursor";
 
 const PageWrapper = ({ children }) => {
   return (
@@ -80,8 +82,8 @@ const AppContent = () => {
           />
         </Routes>
       </AnimatePresence>
-
       <ScrollToTop />
+      {!isCurCursorSupported() && <CustomCursor />}
     </div>
   );
 };
