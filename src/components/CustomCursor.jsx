@@ -37,8 +37,8 @@ const CustomCursor = () => {
   }, []);
 
   const cursorImage = isHovering
-    ? `/assets/cursor/katana-hand-${theme}.cur`
-    : `/assets/cursor/katana-${theme}.cur`;
+    ? `/assets/cursor_2/katana-hand-${theme}.png`
+    : `/assets/cursor_2/katana-${theme}.png`;
 
   return (
     <>
@@ -54,7 +54,7 @@ const CustomCursor = () => {
           height: cursorSize,
           pointerEvents: "none",
           zIndex: 9999,
-          mixBlendMode: "difference",
+          // mixBlendMode:"lighten",
         }}
       />
 
