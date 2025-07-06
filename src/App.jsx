@@ -14,7 +14,6 @@ import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
 import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
-import { isCurCursorSupported } from "./utils/isCursorSupported";
 import CustomCursor from "./components/CustomCursor";
 
 const PageWrapper = ({ children }) => {
@@ -35,7 +34,7 @@ const AppContent = () => {
   return (
     <div className="font-mono bg-white dark:bg-zinc-900 text-black dark:text-white relative overflow-hidden z-0">
       <BackgroundDoodles route={location.pathname} />
-
+      {!window.matchMedia("(any-pointer: coarse)").matches && <CustomCursor />}
       <Navbar />
 
       <AnimatePresence mode="wait" initial={false}>
@@ -83,7 +82,6 @@ const AppContent = () => {
         </Routes>
       </AnimatePresence>
       <ScrollToTop />
-      {!isCurCursorSupported() && <CustomCursor />}
     </div>
   );
 };

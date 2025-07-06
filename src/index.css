@@ -13,31 +13,12 @@
   /* Firefox */
 }
 
-/* Default fallback */
 body {
-  cursor: url("/assets/cursor/katana-extra.png"), auto;
+  cursor: none;
 }
 
-/* Dark mode override */
-body.dark {
-  cursor: url("/assets/cursor/katana-dark.cur"), auto;
+@media (any-pointer: coarse) {
+  body {
+    cursor: default;
 }
-
-.custom-cursor-wrapper img {
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
-  animation: trailing-wave 0.4s ease;
-}
-
-@keyframes trailing-wave {
-  0% {
-    transform: scale(1.1) rotate(1deg);
-  }
-
-  50% {
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
 }

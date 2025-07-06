@@ -1,57 +1,83 @@
 import React, { useEffect, useState } from "react";
-import { useTheme } from "../context/ThemeContext"; // optional if using custom theme context
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [trail, setTrail] = useState([]);
   const [isHovering, setIsHovering] = useState(false);
-  const theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+  const [theme, setTheme] = useState("light");
+
+  const cursorSize = 32;
 
   useEffect(() => {
-    const move = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const updateTheme = () => {
+      setTheme(document.documentElement.classList.contains("dark") ? "dark" : "light");
     };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
 
-  useEffect(() => {
-    const hoverables = document.querySelectorAll("a, button, input, .cursor-hover");
-    const enter = () => setIsHovering(true);
-    const leave = () => setIsHovering(false);
+    const handleMove = (e) => {
+      const { clientX, clientY } = e;
+      setPos({ x: clientX, y: clientY });
+      setTrail((prev) => [...prev.slice(-10), { x: clientX, y: clientY, id: crypto.randomUUID() }]);
+    };
 
-    hoverables.forEach((el) => {
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("mouseleave", leave);
-    });
+    const handleHover = (e) => {
+      setIsHovering(!!e.target.closest("a, button, input, textarea, select, label"));
+    };
+
+    updateTheme();
+    document.addEventListener("mousemove", handleMove);
+    document.addEventListener("mouseover", handleHover);
+    const observer = new MutationObserver(updateTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
     return () => {
-      hoverables.forEach((el) => {
-        el.removeEventListener("mouseenter", enter);
-        el.removeEventListener("mouseleave", leave);
-      });
+      document.removeEventListener("mousemove", handleMove);
+      document.removeEventListener("mouseover", handleHover);
+      observer.disconnect();
     };
   }, []);
 
+  const cursorImage = isHovering
+    ? `/assets/cursor/katana-hand-${theme}.cur`
+    : `/assets/cursor/katana-${theme}.cur`;
+
   return (
-    <div className="custom-cursor-wrapper">
+    <>
+      {/* Custom cursor */}
       <img
-        src={
-          isHovering
-            ? theme === "dark"
-              ? "/assets/cursor/katana-hover-dark.ani"
-              : "/assets/cursor/katana_hover.png"
-            : theme === "dark"
-            ? "/assets/cursor/katana-dark.cur"
-            : "/assets/cursor/katana-extra.png"
-        }
+        src={cursorImage}
         alt="cursor"
-        className="pointer-events-none fixed z-[9999] w-8 h-8 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75"
         style={{
-          top: `${position.y}px`,
-          left: `${position.x}px`,
+          position: "fixed",
+          top: pos.y - cursorSize / 2,
+          left: pos.x - cursorSize / 2,
+          width: cursorSize,
+          height: cursorSize,
+          pointerEvents: "none",
+          zIndex: 9999,
+          mixBlendMode: "difference",
         }}
       />
-    </div>
+
+      {/* Trailing particles */}
+      {trail.map((dot, index) => (
+        <div
+          key={dot.id}
+          style={{
+            position: "fixed",
+            top: dot.y,
+            left: dot.x,
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            backgroundColor: theme === "dark" ? "#fff" : "#000",
+            opacity: (index + 1) / trail.length,
+            transform: "translate(-50%, -50%)",
+            zIndex: 9998,
+            pointerEvents: "none",
+          }}
+        />
+      ))}
+    </>
   );
 };
 
