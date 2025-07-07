@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
 import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
+import SmoothCursorFollower from './components/SmoothCursorFollower'
 
 const PageWrapper = ({ children }) => {
   return (
@@ -32,6 +33,7 @@ const AppContent = () => {
   const location = useLocation();
   return (
     <div className="font-mono bg-white dark:bg-zinc-900 text-black dark:text-white relative overflow-hidden z-0">
+      <SmoothCursorFollower />
       <BackgroundDoodles route={location.pathname} />
 
       <Navbar />
