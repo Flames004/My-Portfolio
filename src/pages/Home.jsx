@@ -1,8 +1,21 @@
 import React from "react";
+import { useEffect } from "react";
 import AnimatedText from "../components/AnimatedText";
 import { Link } from "react-router-dom";
+import { logVisit } from "../logVisit";
+import { useVisitCount } from "../useVisitCount";
+import VisitorBadge from "../components/visitorBadge";
 
 const Home = () => {
+  const visitCount = useVisitCount();
+
+  useEffect(() => {
+    if (!localStorage.getItem("visited")) {
+      logVisit();
+      localStorage.setItem("visited", "true");
+    }
+  }, []);
+
   return (
     <section className="min-h-screen pt-28 px-4 md:px-10 pb-16 bg-transparent flex items-center justify-center">
       <div className="max-w-6xl mx-auto w-full flex flex-col-reverse md:flex-row items-center justify-between gap-12">
@@ -50,6 +63,7 @@ const Home = () => {
           />
         </div>
       </div>
+      <VisitorBadge />
     </section>
   );
 };
