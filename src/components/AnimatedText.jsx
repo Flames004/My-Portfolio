@@ -13,6 +13,7 @@ const translations = [
   { text: "தீபக் சுக்லா", lang: "Tamil" },
   { text: "దీపక్ శుక్లా", lang: "Telugu" },
   { text: "دیپک شکلا", lang: "Urdu" },
+  { text: "燈光 清良", lang: "Japanese" },
 ];
 
 const AnimatedText = () => {

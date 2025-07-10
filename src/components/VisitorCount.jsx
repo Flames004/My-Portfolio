@@ -1,6 +1,6 @@
 import { useVisitCount } from '../useVisitCount';
 
-const VisitorBadge = () => {
+const VisitorCount = () => {
   const count = useVisitCount();
 
   return (
@@ -12,4 +12,4 @@ const VisitorBadge = () => {
   );
 };
 
-export default VisitorBadge;
+export default VisitorCount;

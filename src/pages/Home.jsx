@@ -4,7 +4,7 @@ import AnimatedText from "../components/AnimatedText";
 import { Link } from "react-router-dom";
 import { logVisit } from "../logVisit";
 import { useVisitCount } from "../useVisitCount";
-import VisitorBadge from "../components/visitorBadge";
+import VisitorCount from "../components/VisitorCount";
 
 const Home = () => {
   const visitCount = useVisitCount();
@@ -63,7 +63,7 @@ const Home = () => {
           />
         </div>
       </div>
-      <VisitorBadge />
+      <VisitorCount />
     </section>
   );
 };
