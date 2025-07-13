@@ -89,7 +89,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4 md:mt-0 absolute right-[5%] md:right-[1%]">
           {/* Resume Button */}
           <a
-            href="/resume.pdf"
+            href="/resume_2.pdf"
             download
             className="hidden md:inline-block border-2 border-black dark:border-white px-3 py-1 rounded shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 text-xs lg:text-sm"
           >
