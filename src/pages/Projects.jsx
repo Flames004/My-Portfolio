@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub } from "react-icons/fa6";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -17,6 +18,13 @@ const fadeIn = {
 
 const mainProjects = [
   {
+    title: "Algo Pulse",
+    description:
+      "A real-time algorithm visualizer for sorting and searching algorithms with interactive features.",
+    image: "/assets/projects/project_4.png",
+    link: "https://algo-pulse-beta.vercel.app/",
+  },
+  {
     title: "Emply Connect",
     description:
       "A sleek employee management system for tracking data, performance, and analytics in real-time.",
@@ -30,20 +38,14 @@ const mainProjects = [
     image: "/assets/projects/project_2.gif",
     link: "https://codecanvas01.netlify.app/",
   },
-  {
-    title: "TetriSpin",
-    description:
-      "Modern version of Tetris using Canvas API. Rotate, stack, and clear rows in this retro-style game.",
-    image: "/assets/projects/project_3.gif",
-    link: "https://tetri-spin.netlify.app/",
-  },
 ];
 
 const moreProjects = [
   {
-    title: "Score Board",
-    description: "A live scoring tracker app with custom team names and timer.",
-    link: "https://flames004.github.io/Score-Board/",
+    title: "Tetri Spin",
+    description:
+      "Modern Tetris game using Canvas API with rotation and stacking.",
+    link: "https://tetri-spin.netlify.app/",
   },
   {
     title: "Movie Pedia",
@@ -103,7 +105,9 @@ const Projects = () => {
                 />
               </div>
               <div className="w-full md:w-1/2">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">{project.title}</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                  {project.title}
+                </h2>
                 <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 mb-4">
                   {project.description}
                 </p>
@@ -172,6 +176,18 @@ const Projects = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Centered and styled GitHub button */}
+        <div className="flex justify-center mt-8">
+          <a
+            href="https://github.com/Flames004"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2 text-sm sm:text-md font-semibold border-2 border-zinc-900 dark:border-zinc-100 text-zinc-900 dark:text-zinc-100 rounded-md hover:bg-zinc-900 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-black transition-all duration-300"
+          >
+            View All Projects <FaGithub className="text-xl" />
+          </a>
+        </div>
       </motion.div>
     </section>
   );
