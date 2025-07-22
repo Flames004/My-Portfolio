@@ -57,25 +57,36 @@ const AppContent = () => {
     const handleScroll = () => {
       if (isScrolling) return; // Don't update during programmatic scrolling
       
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      // More natural scroll detection - check which section is most visible
+      let maxVisibleSection = null;
+      let maxVisiblePercentage = 0;
       
       for (const page of pageOrder) {
         const ref = sectionRefs[page];
         if (ref.current) {
           const rect = ref.current.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + rect.height;
+          const windowHeight = window.innerHeight;
           
-          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-            if (currentPage !== page) {
-              setCurrentPage(page);
-              // Update URL without causing scroll
-              const path = page === "home" ? "/" : `/${page}`;
-              navigate(path, { replace: true });
-            }
-            break;
+          // Calculate how much of this section is visible
+          const visibleTop = Math.max(0, -rect.top);
+          const visibleBottom = Math.min(rect.height, windowHeight - rect.top);
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+          const visiblePercentage = visibleHeight / windowHeight;
+          
+          // Only consider sections that are significantly visible (at least 30%)
+          if (visiblePercentage > 0.3 && visiblePercentage > maxVisiblePercentage) {
+            maxVisiblePercentage = visiblePercentage;
+            maxVisibleSection = page;
           }
         }
+      }
+      
+      // Only update if we found a section that's prominently visible
+      if (maxVisibleSection && maxVisibleSection !== currentPage) {
+        setCurrentPage(maxVisibleSection);
+        // Update URL without causing scroll
+        const path = maxVisibleSection === "home" ? "/" : `/${maxVisibleSection}`;
+        navigate(path, { replace: true });
       }
     };
 
