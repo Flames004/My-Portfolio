@@ -69,7 +69,7 @@ const Projects = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="min-h-screen pt-28 px-4 sm:px-6 md:px-12 lg:px-20 py-20 bg-transparent text-black dark:text-white">
+    <div className="min-h-screen pt-28 px-4 sm:px-6 md:px-12 lg:px-20 py-20 bg-transparent text-black dark:text-white">
       <motion.div
         className="max-w-6xl mx-auto"
         initial="hidden"
@@ -189,7 +189,7 @@ const Projects = () => {
           </a>
         </div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 

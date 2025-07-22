@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import AnimatedText from "./AnimatedText";
 
-const Navbar = () => {
+const Navbar = ({ currentPage, scrollToSection }) => {
   const [isDark, setIsDark] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -35,19 +33,24 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "HOME", path: "/" },
-    { name: "ABOUT", path: "/about" },
-    { name: "PROJECTS", path: "/projects" },
-    { name: "SKILLS", path: "/techstack" },
-    { name: "CONTACT", path: "/contact" },
+    { name: "HOME", page: "home" },
+    { name: "ABOUT", page: "about" },
+    { name: "PROJECTS", page: "projects" },
+    { name: "SKILLS", page: "techstack" },
+    { name: "CONTACT", page: "contact" },
   ];
+
+  const handleNavClick = (page) => {
+    scrollToSection(page);
+    setIsOpen(false); // Close mobile menu
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-zinc-900 shadow-md dark:shadow-neutral-700">
       <div className="max-w-7xl mx-auto flex items-center relative h-[72px]">
         {/* Brand / Logo */}
-        <Link
-          to="/"
+        <button
+          onClick={() => scrollToSection("home")}
           className="transition-transform duration-300 hover:rotate-y-180 absolute left-[8%]"
         >
           <img
@@ -55,17 +58,17 @@ const Navbar = () => {
             alt="Logo"
             className="h-10 overflow-hidden scale-150"
           />
-        </Link>
+        </button>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex text-sm lg:text-base mx-auto lg:flex space-x-6 uppercase font-semibold tracking-wider">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive = currentPage === item.page;
             return (
               <li key={item.name}>
-                <Link
-                  to={item.path}
-                  className={`relative group transition-all duration-300 ease-in-out px-1
+                <button
+                  onClick={() => handleNavClick(item.page)}
+                  className={`relative group transition-all duration-300 ease-in-out px-1 cursor-pointer
                     ${
                       isActive
                         ? "text-red-500 dark:text-red-400"
@@ -79,7 +82,7 @@ const Navbar = () => {
                       style={{ transformOrigin: "center" }}
                     ></span>
                   )}
-                </Link>
+                </button>
               </li>
             );
           })}
@@ -123,28 +126,28 @@ const Navbar = () => {
         <div className="md:hidden px-6 py-4 border-t border-zinc-300 dark:border-zinc-700">
           <ul className="flex flex-col space-y-3 text-center">
             {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
+              const isActive = currentPage === item.page;
               return (
                 <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`uppercase block py-1 px-2 text-base font-bold transition duration-200 ${
+                  <button
+                    onClick={() => handleNavClick(item.page)}
+                    className={`uppercase block py-1 px-2 text-base font-bold transition duration-200 cursor-pointer w-full ${
                       isActive
                         ? "text-red-500 dark:text-red-400"
                         : "text-zinc-800 dark:text-zinc-200 hover:text-red-500 dark:hover:text-red-400"
                     }`}
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 </li>
               );
             })}
           </ul>
           <div className="text-center mt-4">
             <a
-              href="/resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1iSpzp93VEWALxwvl7GLyBILrrs30oFIL/view"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block border-2 border-black dark:border-white px-4 py-2 rounded text-sm shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
             >
               📜 Take My Resume, Senpai!

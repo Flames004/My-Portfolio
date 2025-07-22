@@ -1,36 +1,36 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const doodlesByRoute = {
-  "/": [
+const doodlesByPage = {
+  "home": [
     { id: "c1", top: "10%", left: "8%", size: "w-16 sm:w-20 md:w-24" },
     { id: "c2", bottom: "0%", left: "40%", size: "w-28 sm:w-36" },
     { id: "c3", top: "30%", right: "10%", size: "w-32 sm:w-44" },
   ],
-  "/about": [
+  "about": [
     { id: "c1", top: "5%", right: "10%", size: "w-18 sm:w-22" },
     { id: "c2", top: "45%", left: "5%", size: "w-28 sm:w-36" },
     { id: "c3", bottom: "3%", right: "7%", size: "w-32 sm:w-40" },
   ],
-  "/projects": [
+  "projects": [
     { id: "c1", top: "8%", left: "20%", size: "w-28 sm:w-36" },
     { id: "c2", bottom: "10%", left: "5%", size: "w-16 sm:w-20" },
     { id: "c3", top: "40%", right: "3%", size: "w-14 sm:w-18" },
   ],
-  "/techstack": [
+  "techstack": [
     { id: "c1", top: "15%", left: "10%", size: "w-12 sm:w-16" },
     { id: "c2", bottom: "5%", right: "5%", size: "w-28 sm:w-36" },
     { id: "c3", top: "10%", right: "30%", size: "w-20 sm:w-24" },
   ],
-  "/contact": [
+  "contact": [
     { id: "c1", top: "15%", right: "20%", size: "w-18 sm:w-22" },
     { id: "c2", bottom: "12%", right: "10%", size: "w-16 sm:w-20" },
     { id: "c3", top: "40%", left: "5%", size: "w-32 sm:w-44" },
   ],
 };
 
-const BackgroundDoodles = ({ route }) => {
-  const doodles = doodlesByRoute[route] || [];
+const BackgroundDoodles = ({ currentPage }) => {
+  const doodles = doodlesByPage[currentPage] || [];
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">

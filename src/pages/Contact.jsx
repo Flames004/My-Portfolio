@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SocialLinks from "../components/SocialLinks";
+import VisitorCount from "../components/VisitorCount";
 import { db } from "../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import toast from "react-hot-toast";
@@ -68,7 +69,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-transparent text-black dark:text-white">
+    <div className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-transparent text-black dark:text-white">
       <motion.div
         className="max-w-3xl mx-auto"
         initial="hidden"
@@ -178,8 +179,13 @@ const Contact = () => {
           </p>
           <SocialLinks />
         </section>
+
+        {/* Visitor Count */}
+        <section className="mt-16 text-center">
+          <VisitorCount />
+        </section>
       </motion.div>
-    </section>
+    </div>
   );
 };
 
