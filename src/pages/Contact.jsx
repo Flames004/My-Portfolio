@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import SocialLinks from "../components/SocialLinks";
 import { db } from "../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import toast from "react-hot-toast";
@@ -170,14 +169,6 @@ const Contact = () => {
             </button>
           </div>
         </form>
-
-        {/* Social Links */}
-        <section className="mt-20 text-center">
-          <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium mb-5">
-            Or connect with me
-          </p>
-          <SocialLinks />
-        </section>
       </motion.div>
     </section>
   );

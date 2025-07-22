@@ -5,12 +5,14 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { motion } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import TechStack from "./pages/TechStack";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import BackgroundDoodles from "./components/BackgroundDoodles";
 import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
@@ -83,6 +85,7 @@ const AppContent = () => {
         </Routes>
       </AnimatePresence>
 
+      <Footer />
       <ScrollToTop />
     </div>
   );
