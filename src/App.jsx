@@ -12,7 +12,7 @@ import TechStack from "./pages/TechStack";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import ScrollToTop from "./components/ScrollToTop";
 import SmoothCursorFollower from './components/SmoothCursorFollower'
 

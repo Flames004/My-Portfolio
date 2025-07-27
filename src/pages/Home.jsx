@@ -1,14 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
-import AnimatedText from "../components/AnimatedText";
 import { Link } from "react-router-dom";
+import AnimatedText from "../components/AnimatedText";
 import { logVisit } from "../logVisit";
-import { useVisitCount } from "../useVisitCount";
-import VisitorCount from "../components/VisitorCount";
 
 const Home = () => {
-  const visitCount = useVisitCount();
-
   useEffect(() => {
     if (!localStorage.getItem("visited")) {
       logVisit();
@@ -63,7 +59,6 @@ const Home = () => {
           />
         </div>
       </div>
-      <VisitorCount />
     </section>
   );
 };
