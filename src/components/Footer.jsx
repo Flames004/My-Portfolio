@@ -28,14 +28,14 @@ const Footer = () => {
             
             {/* Brand & Bio Section - Takes more space */}
             <div className="lg:col-span-5 space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
+              <div className="space-y-3">
+                <div className="flex items-center space-x-4 -ml-8">
                   <div className="flex-shrink-0">
                     <Link to="/" className="block">
                       <img
                         src="/logo.png"
                         alt="Logo"
-                        className="h-16 w-16 object-contain hover:scale-105 transition-transform duration-300"
+                        className="h-32 object-contain hover:scale-105 transition-transform duration-300"
                       />
                     </Link>
                   </div>
@@ -44,10 +44,10 @@ const Footer = () => {
                       Deepak Shukla
                     </h2>
                     <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                       <span className="text-lg text-red-500 font-semibold">
                         Full Stack Developer
                       </span>
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
                     </div>
                   </div>
                 </div>
@@ -69,11 +69,6 @@ const Footer = () => {
                   <div className="flex items-center space-x-2">
                     <span className="text-sm text-zinc-500 dark:text-zinc-400">🌍</span>
                     <span className="text-sm text-zinc-500 dark:text-zinc-400">Remote & On-site</span>
-                  </div>
-                  <div className="w-px h-5 bg-zinc-300 dark:bg-zinc-600"></div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400">⚡</span>
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400">Quick turnaround</span>
                   </div>
                 </div>
               </div>
@@ -113,7 +108,7 @@ const Footer = () => {
                 <div className="w-12 h-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-full"></div>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-6 w-50">
                 {Object.entries(techStack).map(([category, skills]) => (
                   <div key={category} className="space-y-3">
                     <h4 className="text-xs font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
