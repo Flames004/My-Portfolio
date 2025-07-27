@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SocialLinks from "../components/SocialLinks";
+import Footer from "../components/Footer"; // Add this import
 import { db } from "../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import toast from "react-hot-toast";
@@ -68,118 +69,115 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-transparent text-black dark:text-white">
-      <motion.div
-        className="max-w-3xl mx-auto"
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.6 }}
-        variants={sectionVariants}
-        viewport={{ once: true }}
-      >
-        {/* Heading */}
-        <h1 className="relative font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight font-mono mb-16 text-center text-zinc-900 dark:text-white">
-          <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
-            Contact Me
-          </span>
-        </h1>
+    <>
+      <section className="min-h-screen pt-28 px-4 sm:px-8 md:px-20 py-20 bg-transparent text-black dark:text-white">
+        <motion.div
+          className="max-w-3xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.6 }}
+          variants={sectionVariants}
+          viewport={{ once: true }}
+        >
+          {/* Heading */}
+          <h1 className="relative font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight font-mono mb-16 text-center text-zinc-900 dark:text-white">
+            <span className="relative inline-block px-4 py-2 before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-2/3 before:h-1 before:bg-red-500 before:rounded">
+              Contact Me
+            </span>
+          </h1>
 
-        {/* Form */}
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <div>
-            <label className="block mb-2 font-medium text-lg">Name</label>
-            <input
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
-              placeholder="Your Name"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-2 font-medium text-lg">Email</label>
-            <input
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-2 font-medium text-lg">Message</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
-              rows="5"
-              placeholder="What's on your mind?"
-            ></textarea>
-          </div>
-
-          <div>
-            <label className="block mb-3 font-medium text-lg">
-              Do you watch anime?
-            </label>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="watchesAnime"
-                  value="yes"
-                  checked={formData.watchesAnime === "yes"}
-                  onChange={handleChange}
-                  className="accent-red-500 w-5 h-5"
-                />
-                <span>Yes</span>
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  name="watchesAnime"
-                  value="no"
-                  checked={formData.watchesAnime === "no"}
-                  onChange={handleChange}
-                  className="accent-red-500 w-5 h-5"
-                />
-                <span>No</span>
-              </label>
+          {/* Form */}
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label className="block mb-2 font-medium text-lg">Name</label>
+              <input
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                placeholder="Your Name"
+              />
             </div>
-          </div>
 
-          <div className="pt-6 text-center">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto ${
-                isSubmitting
-                  ? "opacity-60 cursor-not-allowed"
-                  : "hover:bg-red-600"
-              }`}
-            >
-              {isSubmitting ? (
-                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-              ) : (
-                "Send ➤"
-              )}
-            </button>
-          </div>
-        </form>
+            <div>
+              <label className="block mb-2 font-medium text-lg">Email</label>
+              <input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                placeholder="you@example.com"
+              />
+            </div>
 
-        {/* Social Links */}
-        <section className="mt-20 text-center">
-          <p className="text-lg text-zinc-700 dark:text-zinc-300 font-medium mb-5">
-            Or connect with me
-          </p>
-          <SocialLinks />
-        </section>
-      </motion.div>
-    </section>
+            <div>
+              <label className="block mb-2 font-medium text-lg">Message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
+                rows="5"
+                placeholder="What's on your mind?"
+              ></textarea>
+            </div>
+
+            <div>
+              <label className="block mb-3 font-medium text-lg">
+                Do you watch anime?
+              </label>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="watchesAnime"
+                    value="yes"
+                    checked={formData.watchesAnime === "yes"}
+                    onChange={handleChange}
+                    className="accent-red-500 w-5 h-5"
+                  />
+                  <span>Yes</span>
+                </label>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="watchesAnime"
+                    value="no"
+                    checked={formData.watchesAnime === "no"}
+                    onChange={handleChange}
+                    className="accent-red-500 w-5 h-5"
+                  />
+                  <span>No</span>
+                </label>
+              </div>
+            </div>
+
+            <div className="pt-6 text-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`px-8 py-3 text-lg font-semibold bg-red-500 text-white rounded-md transition duration-300 cursor-pointer active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto ${
+                  isSubmitting
+                    ? "opacity-60 cursor-not-allowed"
+                    : "hover:bg-red-600"
+                }`}
+              >
+                {isSubmitting ? (
+                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                ) : (
+                  "Send ➤"
+                )}
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      </section>
+
+      {/* Add Footer */}
+      <Footer />
+    </>
   );
 };
 
