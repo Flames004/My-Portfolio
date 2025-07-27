@@ -12,9 +12,9 @@ import TechStack from "./pages/TechStack";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import BackgroundDoodles from "./components/BackgroundDoodles";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion"; // Add motion import
 import ScrollToTop from "./components/ScrollToTop";
-import SmoothCursorFollower from './components/SmoothCursorFollower'
+import SmoothCursorFollower from './components/SmoothCursorFollower';
 
 const PageWrapper = ({ children }) => {
   return (
