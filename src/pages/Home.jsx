@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import AnimatedText from "../components/AnimatedText";
 import { logVisit } from "../logVisit";
 
@@ -32,13 +33,48 @@ const Home = () => {
             one pixel at a time.
           </p>
 
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
             <Link
               to="/projects"
-              className="inline-block border-2 border-black dark:border-white px-6 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-transform duration-200 font-semibold"
+              className="group relative px-6 py-2 border-2 border-red-500 dark:border-red-400 rounded font-semibold text-red-500 dark:text-red-400 overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              Enter My World
+              <span className="absolute inset-0 bg-red-500 dark:bg-red-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+              <span className="relative z-10 group-hover:text-white dark:group-hover:text-white transition-colors duration-300">
+                Enter My World
+              </span>
             </Link>
+            
+            <div className="flex items-center gap-3">
+              {/* GitHub Button */}
+              <a
+                href="https://github.com/Flames004"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-4 py-2 border-2 border-zinc-900 dark:border-zinc-100 rounded font-medium text-zinc-900 dark:text-zinc-100 overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
+                title="Visit My GitHub"
+              >
+                <span className="absolute inset-0 bg-zinc-900 dark:bg-zinc-100 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                <span className="relative z-10 flex items-center gap-2 group-hover:text-white dark:group-hover:text-zinc-900 transition-colors duration-300">
+                  <FaGithub className="text-lg" />
+                  GitHub
+                </span>
+              </a>
+              
+              {/* LinkedIn Button */}
+              <a
+                href="https://www.linkedin.com/in/deepak004"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-4 py-2 border-2 border-blue-600 rounded font-medium text-blue-600 overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
+                title="Connect on LinkedIn"
+              >
+                <span className="absolute inset-0 bg-blue-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
+                  <FaLinkedin className="text-lg" />
+                  LinkedIn
+                </span>
+              </a>
+            </div>
           </div>
         </div>
 
