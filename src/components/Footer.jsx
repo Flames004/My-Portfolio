@@ -27,13 +27,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section with Logo */}
             <div className="lg:col-span-2 space-y-5">
-                <Link to="/" className="flex-shrink-0 lg:absolute lg:left-20">
-                  <img
-                    src="/logo.svg"
-                    alt="Deepak Shukla Logo"
-                    className="h-40 w-40 transition-all duration-300 hover:scale-110 hover:rotate-3"
-                  />
-                </Link>
+              <Link to="/" className="flex-shrink-0 lg:absolute lg:left-20">
+                <img
+                  src="/logo.svg"
+                  alt="Deepak Shukla Logo"
+                  className="h-40 w-40 transition-all duration-300 hover:scale-110 hover:rotate-3"
+                />
+              </Link>
               <div className="flex items-center space-x-4">
                 <div className="space-y-1">
                   <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
@@ -131,32 +131,18 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-zinc-200 dark:border-zinc-700 py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            {/* Left: Copyright & Social */}
-            <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 md:space-x-8">
-              <p className="text-xs text-zinc-500 dark:text-zinc-500">
-                © {new Date().getFullYear()} Deepak Shukla. All rights reserved.
-              </p>
-              <SocialLinks />
-            </div>
-
-            {/* Right: Contact & Made with */}
-            <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6">
-              <div className="flex items-center space-x-2 text-xs text-zinc-500 dark:text-zinc-500">
-                <span>Mail:</span>
-                <span className="hover:text-red-500 transition-colors duration-200">
-                  deepakshukla2442@gmail.com
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-2 px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-full bg-zinc-50 dark:bg-zinc-800/50 hover:bg-red-100 dark:hover:bg-red-900/20 transition-colors duration-200">
-                <span className="text-xs text-zinc-600 dark:text-zinc-400">
-                  Made with
-                </span>
-                <span className="text-red-500 text-sm">🔥</span>
-                <span className="text-xs text-zinc-600 dark:text-zinc-400">
-                  by Flames
-                </span>
-              </div>
+            <p className="text-sm text-zinc-500 dark:text-zinc-500">
+              © {new Date().getFullYear()} Deepak Shukla. All rights reserved.
+            </p>
+            <SocialLinks />
+            <div className="flex items-center space-x-2 px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-full bg-zinc-50 dark:bg-zinc-800/50 hover:bg-red-100 dark:hover:bg-red-900/20 transition-colors duration-200">
+              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                Made with
+              </span>
+              <span className="text-red-500 text-sm">🔥</span>
+              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                by Flames
+              </span>
             </div>
           </div>
         </div>

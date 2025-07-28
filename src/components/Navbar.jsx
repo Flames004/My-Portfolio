@@ -93,8 +93,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-block border-2 border-black dark:border-white px-3 py-1 rounded shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition duration-200 text-xs lg:text-sm"
+            title="Warning: May Cause Job Offers! 💼"
           >
-            📜 Take My Resume, Senpai!
+            Take My Resume 📜
           </a>
 
           {/* Theme Toggle */}
@@ -143,11 +144,12 @@ const Navbar = () => {
           </ul>
           <div className="text-center mt-4">
             <a
-              href="/resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1iSpzp93VEWALxwvl7GLyBILrrs30oFIL/view"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block border-2 border-black dark:border-white px-4 py-2 rounded text-sm shadow hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
             >
-              📜 Take My Resume, Senpai!
+              Take My Resume 📜
             </a>
           </div>
         </div>

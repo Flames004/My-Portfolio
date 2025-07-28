@@ -297,8 +297,7 @@ const Projects = () => {
             whileTap={{ scale: 0.95 }}
           >
             <FaGithub className="text-xl" />
-            <span>View All Projects on GitHub</span>
-            <FaExternalLinkAlt className="text-sm opacity-70" />
+            <span>View All Projects</span>
           </motion.a>
         </div>
       </motion.div>

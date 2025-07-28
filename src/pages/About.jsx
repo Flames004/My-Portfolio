@@ -32,7 +32,7 @@ const About = () => {
               </span>
             </motion.h1>
             <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              I'm Deepak Shukla, a frontend developer currently pursuing a
+              I'm Deepak Shukla, a full-stack developer currently pursuing a
               B.Tech in Computer Science. With a passion for clean UI and
               thoughtful user experiences, I specialize in building modern,
               responsive web interfaces and websites.

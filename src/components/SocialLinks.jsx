@@ -9,7 +9,7 @@ import {
 
 const SocialLinks = () => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-4">
       <a
         href="https://github.com/Flames004"
         target="_blank"
