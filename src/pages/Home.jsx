@@ -26,7 +26,7 @@ const Home = () => {
           </h1>
 
           <p className="mt-4 text-base sm:text-lg md:text-xl text-zinc-700 dark:text-zinc-300">
-            A frontend developer driven by a passion for clean, dynamic
+            A full-stack developer driven by a passion for clean, dynamic
             interfaces. I design and build responsive, high-impact user
             experiences that deliver precision, personality, and performance —
             one pixel at a time.
@@ -37,7 +37,7 @@ const Home = () => {
               to="/projects"
               className="inline-block border-2 border-black dark:border-white px-6 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-transform duration-200 font-semibold"
             >
-              🔥 Enter My World
+              Enter My World
             </Link>
           </div>
         </div>

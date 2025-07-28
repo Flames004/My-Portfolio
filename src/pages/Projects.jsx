@@ -29,7 +29,7 @@ const mainProjects = [
     image: "/assets/projects/project_4.gif",
     link: "https://algo-pulse-beta.vercel.app/",
     github: "https://github.com/Flames004/algo-pulse",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Canvas"],
   },
   {
     title: "Emply Connect",
@@ -38,7 +38,7 @@ const mainProjects = [
     image: "/assets/projects/project_1.gif",
     link: "https://emply-connect.netlify.app/",
     github: "https://github.com/Flames004/Emply-Connect",
-    tech: ["React", "Express", "Firebase"],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
   },
   {
     title: "Code Canvas",
@@ -47,7 +47,7 @@ const mainProjects = [
     image: "/assets/projects/project_2.gif",
     link: "https://codecanvas01.netlify.app/",
     github: "https://github.com/Flames004/Code-Canvas",
-    tech: ["JavaScript", "HTML", "CSS"],
+    tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
   },
 ];
 
@@ -58,7 +58,7 @@ const moreProjects = [
       "A modern take on the classic Tetris game with smooth animations and responsive design.",
     link: "https://tetri-spin.netlify.app/",
     github: "https://github.com/Flames004/TetriSpin",
-    tech: ["JavaScript", "HTML5 Canvas", "CSS3"],
+    tech: ["JavaScript", "Canvas API", "Local Storage", "HTML5", "CSS3"],
     status: "Featured",
   },
   {
@@ -67,7 +67,7 @@ const moreProjects = [
       "Search movies and get instant details and ratings using TMDB API.",
     link: "https://moviepedia-search.netlify.app/",
     github: "https://github.com/Flames004/Movie-Pedia",
-    tech: ["React", "API", "Tailwind"],
+    tech: ["JavaScript", "Tailwind CSS", "Movie Database API", "HTML5"],
     status: "Popular",
   },
   {
@@ -76,7 +76,7 @@ const moreProjects = [
       "Generates strong passwords based on length and complexity options with security features.",
     link: "https://give-me-password.netlify.app/",
     github: "https://github.com/Flames004/give-me-password",
-    tech: ["JavaScript", "Crypto API", "Local Storage"],
+    tech: ["JavaScript", "Tailwind CSS", "HTML5", "Clipboard API"],
     status: "Updated",
   },
   {
@@ -85,7 +85,7 @@ const moreProjects = [
       "Minimal todo tracker with dark mode, categories, and local storage persistence.",
     link: "https://flames004.github.io/To-Do-List-App/",
     github: "https://github.com/Flames004/To-Do-List-App",
-    tech: ["Vanilla JS", "Local Storage", "CSS3"],
+    tech: ["JavaScript", "HTML5", "CSS3", "Local Storage", "Responsive"],
     status: "Classic",
   },
 ];
@@ -296,7 +296,7 @@ const Projects = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaGithub className="text-xl group-hover:animate-pulse" />
+            <FaGithub className="text-xl" />
             <span>View All Projects on GitHub</span>
             <FaExternalLinkAlt className="text-sm opacity-70" />
           </motion.a>
