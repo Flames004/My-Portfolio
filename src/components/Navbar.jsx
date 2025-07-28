@@ -48,7 +48,7 @@ const Navbar = () => {
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="transition-transform duration-300 hover:rotate-y-180 absolute left-[8%]"
+          className="transition-transform duration-300 hover:rotate-3 hover:scale-110 absolute left-[8%]"
         >
           <img
             src="/logo.png"

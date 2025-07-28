@@ -19,33 +19,32 @@ const Footer = () => {
   return (
     <footer className="relative bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-700">
       {/* Top accent line */}
-      <div className="h-px bg-gradient-to-r from-red-500 via-orange-500 to-red-500"></div>
+      <div className="h-1 bg-gradient-to-r from-red-500 via-orange-500 to-red-500"></div>
 
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Main Footer Content */}
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Brand Section */}
+            {/* Brand Section with Logo */}
             <div className="lg:col-span-2 space-y-5">
-              <Link
-                to="/"
-                className="transition-transform duration-300 hover:rotate-y-180 absolute left-[8%]"
-              >
-                <img
-                  src="/logo.svg"
-                  alt="Logo"
-                  className="h-30 overflow-hidden border border-zinc-300 dark:border-zinc-600 text-red-600"
-                />
-              </Link>
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                  Deepak Shukla
-                </h3>
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-red-500 font-semibold">
-                    Full Stack Developer
-                  </span>
+                <Link to="/" className="flex-shrink-0 lg:absolute lg:left-20">
+                  <img
+                    src="/logo.svg"
+                    alt="Deepak Shukla Logo"
+                    className="h-40 w-40 transition-all duration-300 hover:scale-110 hover:rotate-3"
+                  />
+                </Link>
+              <div className="flex items-center space-x-4">
+                <div className="space-y-1">
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
+                    Deepak Shukla
+                  </h3>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-red-500 font-semibold">
+                      Full Stack Developer
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -83,9 +82,9 @@ const Footer = () => {
                   <Link
                     key={link.name}
                     to={link.path}
-                    className="group flex items-center text-sm text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
+                    className="group flex items-center space-x-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
                   >
-                    <div className="bg-zinc-400 dark:bg-zinc-500 rounded-full group-hover:bg-red-500 transition-colors duration-200"></div>
+                    <div className="w-1 h-1 bg-zinc-400 dark:bg-zinc-500 rounded-full group-hover:bg-red-500 transition-colors duration-200"></div>
                     <span>{link.name}</span>
                   </Link>
                 ))}
@@ -144,12 +143,12 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6">
               <div className="flex items-center space-x-2 text-xs text-zinc-500 dark:text-zinc-500">
                 <span>Mail:</span>
-                <span className="hover:text-red-500">
+                <span className="hover:text-red-500 transition-colors duration-200">
                   deepakshukla2442@gmail.com
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2 px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-full bg-zinc-50 dark:bg-zinc-800/50 hover:bg-red-100 dark:hover:bg-red-900 transition-colors duration-200">
+              <div className="flex items-center space-x-2 px-3 py-1.5 border border-zinc-300 dark:border-zinc-600 rounded-full bg-zinc-50 dark:bg-zinc-800/50 hover:bg-red-100 dark:hover:bg-red-900/20 transition-colors duration-200">
                 <span className="text-xs text-zinc-600 dark:text-zinc-400">
                   Made with
                 </span>
