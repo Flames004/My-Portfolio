@@ -46,14 +46,34 @@ const tech = {
   ],
   "Frameworks & Libraries": [
     {
+      name: "MongoDB",
+      icon: "https://cdn.simpleicons.org/mongodb",
+      link: "https://www.mongodb.com/",
+    },
+    {
+      name: "Express.js",
+      icon: "https://cdn.simpleicons.org/express",
+      link: "https://expressjs.com/",
+    },
+    {
       name: "React",
       icon: "https://cdn.simpleicons.org/react",
       link: "https://reactjs.org/",
     },
     {
+      name: "Node.js",
+      icon: "https://cdn.simpleicons.org/nodedotjs",
+      link: "https://nodejs.org/",
+    },
+    {
       name: "React Native",
       icon: "https://cdn.simpleicons.org/react",
       link: "https://reactnative.dev/",
+    },
+    {
+      name: "Expo",
+      icon: "https://cdn.simpleicons.org/expo",
+      link: "https://expo.dev/",
     },
     {
       name: "Next.js",
@@ -64,11 +84,6 @@ const tech = {
       name: "Tailwind CSS",
       icon: "https://cdn.simpleicons.org/tailwindcss",
       link: "https://tailwindcss.com/",
-    },
-    {
-      name: "Bootstrap",
-      icon: "https://cdn.simpleicons.org/bootstrap",
-      link: "https://getbootstrap.com/",
     },
   ],
   "Tools & Platforms": [
@@ -143,6 +158,11 @@ const tech = {
       name: "Google Gemini",
       icon: "https://cdn.simpleicons.org/googlegemini",
       link: "https://deepmind.google/technologies/gemini/",
+    },
+    {
+      name: "VAPI",
+      icon: "https://vapi.ai/favicon.ico",
+      link: "https://vapi.ai/",
     },
   ],
 };

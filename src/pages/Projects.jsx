@@ -23,6 +23,24 @@ const fadeIn = {
 
 const mainProjects = [
   {
+    title: "EduGenie",
+    description:
+      "An AI-powered learning platform to transform your documents into interactive learning experiences for smarter study.",
+    image: "/assets/projects/project_5.gif",
+    link: "https://edu-genie-ai.vercel.app/",
+    github: "https://github.com/Flames004/Edu-Genie",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB", "Google Gemini AI"],
+  },
+  {
+    title: "Post Pilot",
+    description:
+      "AI-powered social media content generation platform to create engaging posts effortlessly.",
+    image: "/assets/projects/project_6.png",
+    link: "https://post-pilot-sable.vercel.app/",
+    github: "https://github.com/Flames004/Post-Pilot",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Google Gemini AI"],
+  },
+  {
     title: "Algo Pulse",
     description:
       "An interactive platform for learning algorithms through visualizations and coding challenges.",
@@ -31,34 +49,25 @@ const mainProjects = [
     github: "https://github.com/Flames004/algo-pulse",
     tech: ["React", "TypeScript", "Tailwind CSS", "Canvas"],
   },
+];
+
+const moreProjects = [
   {
     title: "Emply Connect",
     description:
       "A sleek employee management system for tracking data, performance, and analytics in real-time.",
-    image: "/assets/projects/project_1.gif",
     link: "https://emply-connect.netlify.app/",
     github: "https://github.com/Flames004/Emply-Connect",
     tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
+    status: "Popular",
   },
   {
     title: "Code Canvas",
     description:
       "A lightweight code editor like CodePen to write, preview, and share HTML, CSS, and JS.",
-    image: "/assets/projects/project_2.gif",
     link: "https://codecanvas01.netlify.app/",
     github: "https://github.com/Flames004/Code-Canvas",
     tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
-  },
-];
-
-const moreProjects = [
-  {
-    title: "TetriSpin",
-    description:
-      "A modern take on the classic Tetris game with smooth animations and responsive design.",
-    link: "https://tetri-spin.netlify.app/",
-    github: "https://github.com/Flames004/TetriSpin",
-    tech: ["JavaScript", "Canvas API", "Local Storage", "HTML5", "CSS3"],
     status: "Featured",
   },
   {
@@ -68,24 +77,15 @@ const moreProjects = [
     link: "https://moviepedia-search.netlify.app/",
     github: "https://github.com/Flames004/Movie-Pedia",
     tech: ["JavaScript", "Tailwind CSS", "Movie Database API", "HTML5"],
-    status: "Popular",
-  },
-  {
-    title: "Password Generator",
-    description:
-      "Generates strong passwords based on length and complexity options with security features.",
-    link: "https://give-me-password.netlify.app/",
-    github: "https://github.com/Flames004/give-me-password",
-    tech: ["JavaScript", "Tailwind CSS", "HTML5", "Clipboard API"],
     status: "Updated",
   },
   {
-    title: "To Do List App",
+    title: "TetriSpin",
     description:
-      "Minimal todo tracker with dark mode, categories, and local storage persistence.",
-    link: "https://flames004.github.io/To-Do-List-App/",
-    github: "https://github.com/Flames004/To-Do-List-App",
-    tech: ["JavaScript", "HTML5", "CSS3", "Local Storage", "Responsive"],
+      "A modern take on the classic Tetris game with smooth animations and responsive design.",
+    link: "https://tetri-spin.netlify.app/",
+    github: "https://github.com/Flames004/TetriSpin",
+    tech: ["JavaScript", "Canvas API", "Local Storage", "HTML5", "CSS3"],
     status: "Classic",
   },
 ];
@@ -289,7 +289,7 @@ const Projects = () => {
         {/* GitHub Profile Button - Centrally Aligned at Bottom */}
         <div className="text-center mt-16">
           <motion.a
-            href="https://github.com/your-username"
+            href="https://github.com/Flames004"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 border-2 border-zinc-900 dark:border-white text-zinc-900 dark:text-white rounded-lg font-semibold hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-zinc-900 transition-all duration-300 shadow-lg hover:shadow-xl group"
