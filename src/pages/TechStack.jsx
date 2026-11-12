@@ -30,7 +30,7 @@ const tech = {
     },
     {
       name: "Java",
-      icon: "https://api.iconify.design/logos:java.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
       link: "https://www.java.com/",
     },
     {
@@ -44,26 +44,16 @@ const tech = {
       link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
   ],
-  "Frameworks & Libraries": [
-    {
-      name: "MongoDB",
-      icon: "https://cdn.simpleicons.org/mongodb",
-      link: "https://www.mongodb.com/",
-    },
-    {
-      name: "Express.js",
-      icon: "https://cdn.simpleicons.org/express",
-      link: "https://expressjs.com/",
-    },
+  "Frontend, CMS & Mobile": [
     {
       name: "React",
       icon: "https://cdn.simpleicons.org/react",
       link: "https://reactjs.org/",
     },
     {
-      name: "Node.js",
-      icon: "https://cdn.simpleicons.org/nodedotjs",
-      link: "https://nodejs.org/",
+      name: "Next.js",
+      icon: "https://cdn.simpleicons.org/nextdotjs",
+      link: "https://nextjs.org/",
     },
     {
       name: "React Native",
@@ -76,41 +66,51 @@ const tech = {
       link: "https://expo.dev/",
     },
     {
-      name: "Next.js",
-      icon: "https://cdn.simpleicons.org/nextdotjs",
-      link: "https://nextjs.org/",
-    },
-    {
       name: "Tailwind CSS",
       icon: "https://cdn.simpleicons.org/tailwindcss",
       link: "https://tailwindcss.com/",
     },
+    {
+      name: "WordPress",
+      icon: "https://cdn.simpleicons.org/wordpress",
+      link: "https://wordpress.org/",
+    },
+    {
+      name: "Shopify",
+      icon: "https://cdn.simpleicons.org/shopify",
+      link: "https://www.shopify.com/",
+    },
   ],
-  "Tools & Platforms": [
+  "Backend & Databases": [
     {
-      name: "VS Code",
-      icon: "https://api.iconify.design/vscode-icons:file-type-vscode.svg",
-      link: "https://code.visualstudio.com/",
+      name: "Node.js",
+      icon: "https://cdn.simpleicons.org/nodedotjs",
+      link: "https://nodejs.org/",
     },
     {
-      name: "Git",
-      icon: "https://cdn.simpleicons.org/git",
-      link: "https://git-scm.com/",
+      name: "Express.js",
+      icon: "https://cdn.simpleicons.org/express",
+      link: "https://expressjs.com/",
     },
     {
-      name: "Figma",
-      icon: "https://cdn.simpleicons.org/figma",
-      link: "https://www.figma.com/",
+      name: "PostgreSQL",
+      icon: "https://cdn.simpleicons.org/postgresql",
+      link: "https://www.postgresql.org/",
     },
     {
-      name: "Android Studio",
-      icon: "https://cdn.simpleicons.org/androidstudio",
-      link: "https://developer.android.com/studio",
+      name: "Redis",
+      icon: "https://cdn.simpleicons.org/redis",
+      link: "https://redis.io/",
     },
     {
-      name: "Firebase",
-      icon: "https://cdn.simpleicons.org/firebase",
-      link: "https://firebase.google.com/",
+      name: "Neon Database",
+      icon: "https://cdn.simpleicons.org/neon",
+      link: "https://neon.tech/",
+    },
+    {
+      name: "MongoDB",
+      icon: "https://cdn.simpleicons.org/mongodb",
+      link: "https://www.mongodb.com/",
     },
     {
       name: "MySQL",
@@ -123,30 +123,82 @@ const tech = {
       link: "https://supabase.com/",
     },
     {
+      name: "Firebase",
+      icon: "https://cdn.simpleicons.org/firebase",
+      link: "https://firebase.google.com/",
+    },
+  ],
+  "Cloud, DevOps & Services": [
+    {
+      name: "Docker",
+      icon: "https://cdn.simpleicons.org/docker",
+      link: "https://www.docker.com/",
+    },
+    {
+      name: "GitHub Actions",
+      icon: "https://cdn.simpleicons.org/githubactions",
+      link: "https://github.com/features/actions",
+    },
+    {
+      name: "Cloudflare",
+      icon: "https://cdn.simpleicons.org/cloudflare",
+      link: "https://www.cloudflare.com/",
+    },
+    {
+      name: "Hostinger",
+      icon: "https://cdn.simpleicons.org/hostinger",
+      link: "https://www.hostinger.com/",
+    },
+    {
+      name: "Git",
+      icon: "https://cdn.simpleicons.org/git",
+      link: "https://git-scm.com/",
+    },
+    {
+      name: "Razorpay",
+      icon: "https://cdn.simpleicons.org/razorpay",
+      link: "https://razorpay.com/",
+    },
+    {
+      name: "Zapier",
+      icon: "https://cdn.simpleicons.org/zapier",
+      link: "https://zapier.com/",
+    },
+    {
+      name: "n8n",
+      icon: "https://cdn.simpleicons.org/n8n",
+      link: "https://n8n.io/",
+    },
+    {
       name: "Clerk",
       icon: "https://cdn.simpleicons.org/clerk",
       link: "https://clerk.dev/",
     },
   ],
-  "AI & Productivity Tools": [
+  "Developer Tools & Design": [
     {
-      name: "ChatGPT / OpenAI",
-      icon: "https://cdn.simpleicons.org/openai",
-      link: "https://openai.com/chatgpt",
+      name: "Postman",
+      icon: "https://cdn.simpleicons.org/postman",
+      link: "https://www.postman.com/",
     },
     {
-      name: "GitHub Copilot",
-      icon: "https://cdn.simpleicons.org/githubcopilot",
-      link: "https://github.com/features/copilot",
+      name: "VS Code",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+      link: "https://code.visualstudio.com/",
     },
     {
-      name: "Replit",
-      icon: "https://cdn.simpleicons.org/replit",
-      link: "https://replit.com/",
+      name: "Android Studio",
+      icon: "https://cdn.simpleicons.org/androidstudio",
+      link: "https://developer.android.com/studio",
+    },
+    {
+      name: "Figma",
+      icon: "https://cdn.simpleicons.org/figma",
+      link: "https://www.figma.com/",
     },
     {
       name: "Canva",
-      icon: "https://cdn.simpleicons.org/canva",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg",
       link: "https://www.canva.com/",
     },
     {
@@ -155,14 +207,14 @@ const tech = {
       link: "https://www.notion.so/",
     },
     {
-      name: "Google Gemini",
-      icon: "https://cdn.simpleicons.org/googlegemini",
-      link: "https://deepmind.google/technologies/gemini/",
-    },
-    {
       name: "VAPI",
       icon: "https://vapi.ai/favicon.ico",
       link: "https://vapi.ai/",
+    },
+    {
+      name: "Replit",
+      icon: "https://cdn.simpleicons.org/replit",
+      link: "https://replit.com/",
     },
   ],
 };
@@ -184,8 +236,11 @@ const TechStack = () => {
         </motion.h1>
 
         {Object.entries(tech).map(([category, items]) => (
-          <div key={category} className="mb-10">
-            <h3 className="text-2xl font-semibold mb-4">{category}</h3>
+          <div key={category} className="mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-zinc-800 dark:text-zinc-100 flex items-center gap-2">
+              <span className="w-2 h-6 bg-red-500 rounded"></span>
+              {category}
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {items.map((item, index) => (
                 <a
@@ -193,14 +248,14 @@ const TechStack = () => {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex flex-col items-center justify-center bg-neutral-100 dark:bg-zinc-800 px-6 py-4 rounded-md shadow-md hover:scale-105 transition-transform duration-200 w-36 h-24 cursor-pointer"
+                  className="group flex flex-col items-center justify-center bg-neutral-100 dark:bg-zinc-800 px-6 py-4 rounded-md shadow-md hover:scale-105 transition-transform duration-200 w-full min-h-[96px] cursor-pointer"
                 >
                   <img
                     src={item.icon}
                     alt={item.name}
-                    className="w-8 h-8 transition-transform duration-300 group-hover:-translate-y-1"
+                    className="w-8 h-8 object-contain transition-transform duration-300 group-hover:-translate-y-1"
                   />
-                  <span className="text-sm sm:opacity-100 text-zinc-700 dark:text-zinc-300 mt-2 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap overflow-hidden text-ellipsis text-center">
+                  <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mt-2 text-center break-words leading-tight">
                     {item.name}
                   </span>
                 </a>
