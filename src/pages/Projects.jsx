@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaGithub,
   FaExternalLinkAlt,
-  FaStar,
-  FaCodeBranch,
+  FaLaptopCode,
 } from "react-icons/fa";
 
 const sectionVariants = {
@@ -23,43 +22,101 @@ const fadeIn = {
 
 const mainProjects = [
   {
+    title: "TraceOps API",
+    description:
+      "A high-performance, self-hosted API Gateway and Real-Time Telemetry Platform featuring distributed Redis sliding-window rate limiting, SSRF defense engine, and sub-millisecond reverse proxying.",
+    image: "/assets/projects/traceops.png",
+    link: "https://traceops-api.vercel.app/",
+    github: "https://github.com/Flames004/traceops-api",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Next.js 14",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Tutonar",
+    description:
+      "A modern full-stack educational platform connecting tutors with students, featuring dynamic tutor profiles, student inquiry workflows, interactive analytics, and Razorpay payment integration.",
+    image: "/assets/projects/tutonar.png",
+    link: "https://tutonar.com",
+    github: null,
+    tech: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS v4",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Razorpay",
+      "Recharts",
+    ],
+  },
+  {
     title: "EduGenie",
     description:
       "An AI-powered learning platform to transform your documents into interactive learning experiences for smarter study.",
     image: "/assets/projects/project_5.gif",
     link: "https://edu-genie-ai.vercel.app/",
     github: "https://github.com/Flames004/Edu-Genie",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "MongoDB", "Google Gemini AI"],
-  },
-  {
-    title: "Post Pilot",
-    description:
-      "AI-powered social media content generation platform to create engaging posts effortlessly.",
-    image: "/assets/projects/project_6.png",
-    link: "https://post-pilot-sable.vercel.app/",
-    github: "https://github.com/Flames004/Post-Pilot",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Google Gemini AI"],
-  },
-  {
-    title: "Algo Pulse",
-    description:
-      "An interactive platform for learning algorithms through visualizations and coding challenges.",
-    image: "/assets/projects/project_4.gif",
-    link: "https://algo-pulse-beta.vercel.app/",
-    github: "https://github.com/Flames004/algo-pulse",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Canvas"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Express.js",
+      "MongoDB",
+      "Google Gemini AI",
+    ],
   },
 ];
 
 const moreProjects = [
   {
-    title: "Emply Connect",
+    title: "Eco Pulse",
     description:
-      "A sleek employee management system for tracking data, performance, and analytics in real-time.",
-    link: "https://emply-connect.netlify.app/",
-    github: "https://github.com/Flames004/Emply-Connect",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Redux"],
-    status: "Popular",
+      "A carbon footprint tracking application that helps users monitor and reduce emissions from travel and electronics with AI-powered recommendations.",
+    link: null,
+    github: "https://github.com/Flames004/EcoPulse",
+    tech: [
+      "React 18",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Google Maps API",
+      "OpenAI",
+    ],
+    status: "New",
+  },
+  {
+    title: "Algo Pulse",
+    description:
+      "An interactive platform for learning algorithms through visualizations and coding challenges.",
+    link: "https://algo-pulse-beta.vercel.app/",
+    github: "https://github.com/Flames004/algo-pulse",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Canvas"],
+    status: "Interactive",
+  },
+  {
+    title: "Post Pilot",
+    description:
+      "AI-powered social media content generation platform to create engaging posts effortlessly.",
+    link: "https://post-pilot-sable.vercel.app/",
+    github: "https://github.com/Flames004/Post-Pilot",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+      "Google Gemini AI",
+    ],
+    status: "AI",
   },
   {
     title: "Code Canvas",
@@ -70,25 +127,54 @@ const moreProjects = [
     tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
     status: "Featured",
   },
-  {
-    title: "Movie Pedia",
-    description:
-      "Search movies and get instant details and ratings using TMDB API.",
-    link: "https://moviepedia-search.netlify.app/",
-    github: "https://github.com/Flames004/Movie-Pedia",
-    tech: ["JavaScript", "Tailwind CSS", "Movie Database API", "HTML5"],
-    status: "Updated",
-  },
-  {
-    title: "TetriSpin",
-    description:
-      "A modern take on the classic Tetris game with smooth animations and responsive design.",
-    link: "https://tetri-spin.netlify.app/",
-    github: "https://github.com/Flames004/TetriSpin",
-    tech: ["JavaScript", "Canvas API", "Local Storage", "HTML5", "CSS3"],
-    status: "Classic",
-  },
 ];
+
+const ProjectMedia = ({ src, title }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (!src || hasError) {
+    return (
+      <div className="w-full aspect-video min-h-[220px] sm:min-h-[260px] bg-gradient-to-br from-zinc-100 via-zinc-200/60 to-zinc-100 dark:from-zinc-800 dark:via-zinc-850 dark:to-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-md flex flex-col items-center justify-center p-6 text-center select-none">
+        <div className="w-14 h-14 rounded-2xl bg-red-100 dark:bg-red-950/50 text-red-500 dark:text-red-400 flex items-center justify-center mb-3 shadow-inner">
+          <FaLaptopCode className="text-2xl" />
+        </div>
+        <span className="text-base sm:text-lg font-bold text-zinc-800 dark:text-zinc-200">
+          {title}
+        </span>
+        <span className="inline-block mt-2 px-3 py-1 rounded-full text-xs font-medium bg-zinc-200/80 dark:bg-zinc-700/80 text-zinc-600 dark:text-zinc-300">
+          Media Preview Coming Soon
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={title}
+      onError={() => setHasError(true)}
+      className="w-full h-auto object-cover border border-zinc-300 dark:border-zinc-700 rounded-md"
+    />
+  );
+};
+
+const getStatusBadgeClass = (status) => {
+  switch (status) {
+    case "Featured":
+      return "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400";
+    case "Popular":
+      return "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400";
+    case "Interactive":
+    case "Updated":
+      return "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400";
+    case "New":
+      return "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400";
+    case "AI":
+      return "bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400";
+    default:
+      return "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400";
+  }
+};
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
@@ -127,17 +213,13 @@ const Projects = () => {
               viewport={{ once: true }}
             >
               <div className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-auto object-cover border border-zinc-300 dark:border-zinc-700 rounded-md"
-                />
+                <ProjectMedia src={project.image} title={project.title} />
               </div>
               <div className="w-full md:w-1/2">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                   {project.title}
                 </h2>
-                <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 mb-4">
+                <p className="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -154,25 +236,29 @@ const Projects = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2 text-sm sm:text-md font-semibold border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out active:scale-95"
-                  >
-                    <FaExternalLinkAlt className="text-xs" />
-                    View Live
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2 text-sm sm:text-md font-semibold border-2 border-zinc-600 dark:border-zinc-300 text-zinc-700 dark:text-zinc-300 rounded-md hover:bg-zinc-600 hover:text-white dark:hover:bg-zinc-300 dark:hover:text-black transition-all duration-300 ease-in-out active:scale-95"
-                  >
-                    <FaGithub className="text-sm" />
-                    Code
-                  </a>
+                <div className="flex flex-wrap gap-4">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2 text-sm sm:text-md font-semibold border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out active:scale-95"
+                    >
+                      <FaExternalLinkAlt className="text-xs" />
+                      View Live
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2 text-sm sm:text-md font-semibold border-2 border-zinc-600 dark:border-zinc-300 text-zinc-700 dark:text-zinc-300 rounded-md hover:bg-zinc-600 hover:text-white dark:hover:bg-zinc-300 dark:hover:text-black transition-all duration-300 ease-in-out active:scale-95"
+                    >
+                      <FaGithub className="text-sm" />
+                      Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -184,7 +270,7 @@ const Projects = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowMore(!showMore)}
-            className="px-8 py-3 text-sm sm:text-md font-medium border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300"
+            className="px-8 py-3 text-sm sm:text-md font-medium border-2 border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer"
           >
             {showMore ? "Show Less" : "Show More"}
           </motion.button>
@@ -217,15 +303,9 @@ const Projects = () => {
                   {/* Status Badge */}
                   <div className="absolute top-4 right-4">
                     <span
-                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        project.status === "Featured"
-                          ? "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400"
-                          : project.status === "Popular"
-                          ? "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400"
-                          : project.status === "Updated"
-                          ? "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
-                          : "bg-zinc-100 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400"
-                      }`}
+                      className={`px-2 py-1 text-xs font-semibold rounded-full ${getStatusBadgeClass(
+                        project.status
+                      )}`}
                     >
                       {project.status}
                     </span>
@@ -254,28 +334,34 @@ const Projects = () => {
                     </div>
 
                     {/* Action Links */}
-                    <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-zinc-700">
-                      <div className="flex gap-4">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-red-500 hover:text-red-600 transition-colors duration-200"
-                        >
-                          <FaExternalLinkAlt className="text-xs" />
-                          Live Demo
-                        </a>
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors duration-200"
-                        >
-                          <FaGithub className="text-xs" />
-                          Source
-                        </a>
+                    {(project.link || project.github) && (
+                      <div className="flex items-center justify-between pt-2 border-t border-zinc-200 dark:border-zinc-700">
+                        <div className="flex gap-4">
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-medium text-red-500 hover:text-red-600 transition-colors duration-200"
+                            >
+                              <FaExternalLinkAlt className="text-xs" />
+                              Live Demo
+                            </a>
+                          )}
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors duration-200"
+                            >
+                              <FaGithub className="text-xs" />
+                              Source
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   {/* Hover Effect Overlay */}
