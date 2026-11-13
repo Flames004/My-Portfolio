@@ -7,13 +7,14 @@ const Footer = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
+    { name: "Skills", path: "/techstack" },
     { name: "Contact", path: "/contact" },
   ];
 
   const techStack = {
-    frontend: ["React", "TypeScript", "Tailwind CSS", "JavaScript"],
-    backend: ["Node.js", "Express", "MongoDB", "SupaBase"],
-    tools: ["Firebase", "Git", "Clerk", "Postman"],
+    frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    backend: ["Node.js", "Express", "PostgreSQL", "Redis", "MongoDB"],
+    "cloud & devops": ["Docker", "GitHub Actions", "Cloudflare", "Supabase"],
   };
 
   return (
@@ -27,14 +28,14 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section with Logo */}
             <div className="lg:col-span-2 space-y-5">
-              <Link to="/" className="flex-shrink-0 lg:absolute lg:left-20">
-                <img
-                  src="/logo.svg"
-                  alt="Deepak Shukla Logo"
-                  className="h-40 w-40 transition-all duration-300 hover:scale-110 hover:rotate-3"
-                />
-              </Link>
               <div className="flex items-center space-x-4">
+                <Link to="/" className="flex-shrink-0 group">
+                  <img
+                    src="/logo.svg"
+                    alt="Deepak Shukla Logo"
+                    className="h-14 w-14 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 drop-shadow-md"
+                  />
+                </Link>
                 <div className="space-y-1">
                   <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">
                     Deepak Shukla
