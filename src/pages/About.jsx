@@ -32,10 +32,10 @@ const About = () => {
               </span>
             </motion.h1>
             <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-              I'm Deepak Shukla, a full-stack developer currently pursuing a
-              B.Tech in Computer Science. With a passion for clean UI and
-              thoughtful user experiences, I specialize in building modern,
-              responsive web interfaces and websites.
+              I'm Deepak Shukla, a full-stack developer dedicated to building scalable,
+              high-performance web applications. I bridge robust backend systems and
+              modern cloud architectures with clean, intuitive interfaces — creating
+              digital products that deliver on both precision and performance.
             </p>
           </div>
 
@@ -103,17 +103,16 @@ const About = () => {
             </h3>
             <p className="text-zinc-700 dark:text-zinc-300 mb-2">
               <span className="font-medium">
-                B.Tech in Computer Science & Engineering
+                B.Tech in Computer Science & Engineering (2022 – 2026)
               </span>{" "}
               — Kamla Nehru Institute of Technology
             </p>
             <p className="text-zinc-700 dark:text-zinc-300 text-lg">
-              Over the course of my degree, I've explored key areas such as Data
-              Structures & Algorithms, Operating Systems, Computer Networks,
-              Database Management Systems, Software Engineering, and Artificial
-              Intelligence. These subjects have helped me build a strong
-              foundation in both theoretical computer science and practical
-              software development.
+              Graduated with a strong foundation in core computer science disciplines,
+              including Data Structures & Algorithms, Operating Systems, Computer Networks,
+              Database Management Systems, Software Engineering, and Artificial Intelligence.
+              Throughout my degree, I transformed theoretical concepts into production-ready
+              web applications, backend services, and scalable architectures.
             </p>
           </div>
 
@@ -145,10 +144,10 @@ const About = () => {
               What I Value
             </h3>
             <ul className="list-disc pl-6 text-zinc-700 dark:text-zinc-300 space-y-1 text-lg">
-              <li>Design-first thinking with scalable UI architecture</li>
-              <li>Writing clean, maintainable and robust code</li>
-              <li>Collaboration, consistency, and curiosity</li>
-              <li>Balancing creative freedom with purposeful intent</li>
+              <li>Scalable system architecture paired with design-first UI thinking</li>
+              <li>Writing clean, maintainable, and resilient code</li>
+              <li>Relentless curiosity and continuous learning</li>
+              <li>Balancing engineering discipline with creative problem solving</li>
             </ul>
           </div>
 
